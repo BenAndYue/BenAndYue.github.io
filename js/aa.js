@@ -1,14 +1,11 @@
 // counting game time
-let t = 0;
-let time;
-let j = 0;
 
+let j = 0;
 let box, projectile, z = 0, dz = -0.1;
 
 
 window.onload = function () {
     //hud
-    time = document.getElementById("time")
     score = document.getElementById("score")
 
 
@@ -23,12 +20,9 @@ window.onload = function () {
 }
 
 function loop() {
-    t++
-    time.setAttribute("value", 'Tijd: ' + t)
-
     setTimeout(loop, 50)
 
-
+   //500 punten
    if(collision(target, ball)){
        console.log("DONE")
        ball.remove()
