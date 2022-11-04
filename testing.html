@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+    <script src="js/abc.js"></script>
+</head>
+
+<body>
+
+<a-scene>
+
+    <a-assets>
+        <img id="wall"
+             src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2F4340689010_68c3b1bbb7_o%20(2).jpg?1547154870021">
+        <img id="starsky"
+             src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2Fstarry%20night.jpg?1547158907338">
+        <img id="bordeauxtheater"
+             src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2FOp%C3%A9ra_National_de_Bordeaux%20(1).jpg?1547235572572">
+
+    </a-assets>
+
+    <a-entity id="camera" position="0 1.6 1" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
+    </a-entity>
+
+    <a-entity laser-controls="hand:right"></a-entity>
+
+
+    <a-sky id="sky" src="#starsky"></a-sky>
+
+    <a-entity id="architecture" class="homeworld">
+        <a-box width="12" color="black" position="0 -1 4" depth="12"></a-box>
+        <a-box width="0.1" color="white" position="6 -1 4" depth="12"></a-box>
+        <a-box
+                width="0.1"
+                color="white"
+                position="-6 -1 4"
+                depth="12"
+        ></a-box>
+        <a-box
+                width="12"
+                color="white"
+                position="0 -1 -2"
+                depth="0.1"
+        ></a-box>
+        <a-box
+                width="12"
+                color="white"
+                position="0 -1 10"
+                depth="0.1"
+        ></a-box>
+
+        <a-entity
+                id="color"
+                position="0 0.7 -4.5"
+                text="color: white; align: center; value: Start door op de bol te gaan drukken; width: 1.5"
+                scale="5 5"
+        >
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="photospheredisplay" class="homeworld" position="0 0 -5">
+        <a-box color="black" rotation="0 0 0" width="1" height="2" depth=".5"></a-box>
+        <a-sphere position="0 1.8 0" radius=".7" src="#bordeauxtheater" sphereexpand
+                  animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
+        ></a-sphere>
+    </a-entity>
+
+    <a-circle id="homebutton" position="0 0 0" rotation="-90 0 0" backhome></a-circle>
+
+
+    <!--intro scene-->
+    <!--     intro -->
+    <a-entity class="intro" visible="false">
+
+
+        <a-circle color="blue" position="3 1 -3" rotation="0 0 0"></a-circle>
+
+<!--        Jij als ergotherapeut komt zo bij Lars, je hebt hem in het verleden wel gezien, maar dat is alweer bijna een jaar geleden.-->
+
+<!--        Lars heeft een epileptische aanval gehad door het niet regelmatig innemen van zijn medicatie. Hierdoor vindt zijn moeder het niet veilig om hem zelfstandig te laten wonen en heeft een ergotherapeut ingeschakeld  "-->
+
+<!--        <a-triangle-->
+<!--                color="black"-->
+<!--                position="5.825 0.621 5"-->
+<!--                rotation="0 -45 -90"-->
+<!--        ></a-triangle>-->
+
+    </a-entity>
+</a-scene>
+
+
+</body>
+
+</html>

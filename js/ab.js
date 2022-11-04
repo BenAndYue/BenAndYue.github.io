@@ -27,7 +27,7 @@ function setScene1() {
 
 function setSceneFarm() {
     document.getElementById('scene1').setAttribute('visible', 'false')
-    document.getElementById('sceneFarm').setAttribute('visible', 'true')
+    document.getElementById('intro').setAttribute('visible', 'true')
 }
 
 function setSceneStore() {

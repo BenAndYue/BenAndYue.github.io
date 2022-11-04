@@ -9,59 +9,18 @@
     <script src="js/ab.js"></script>
     <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
     <script>
-        AFRAME.registerComponent('change-color-on-hover', {
-            schema: {
-                color: {default: 'red'}
-            },
 
-            init: function () {
-                var data = this.data;
-                var el = this.el;  // <a-box>
-                var defaultColor = el.getAttribute('material').color;
-
-                el.addEventListener('mouseenter', function () {
-                    el.setAttribute('color', data.color);
-                });
-
-                el.addEventListener('mouseleave', function () {
-                    el.setAttribute('color', defaultColor);
-                });
-            }
-        });
     </script>
 </head>
 <body>
 <a-scene>
     <a-assets></a-assets>
     <!--The placement of model-->
-    <a-entity camera position="0 0 10" look-controls wasd-controls>
-        <a-camera>
-            <a-cursor></a-cursor>
-        </a-camera>
-        <a-entity
-                id="controller-data"
-                controller-listener="leftControllerId:  #left-controller;
-                                 rightControllerId: #right-controller;">
-        </a-entity>
-
-        <a-entity
-                id="left-controller"
-                oculus-touch-controls="hand: left">
-        </a-entity>
-
-        <a-entity
-                id="right-controller"
-                oculus-touch-controls="hand: right"
-                raycaster="objects: .raycaster-target, .environmentGround;"
-                raycaster-extras="controllerListenerId: #controller-data;
-                              beamImageSrc: #gradient; beamLength: 0.5;">
-            <a-entity hand-controls laser-controls raycaster="far: 2"></a-entity>
-
-        </a-entity>
-
+    <a-entity id="camera" position="0 1.6 0" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
     </a-entity>
 
-    </a-entity>
+
 
     <!--      Homescherm-->
     <a-entity id="scene1">
