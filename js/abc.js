@@ -41,6 +41,7 @@ AFRAME.registerComponent('sphereexpand', {
             introelements.forEach((introelement) => {
                 introelement.setAttribute('visible', true)
             })
+            // document.getElementById('intro').setAttribute('visible', 'true')
 
         }
 
@@ -57,7 +58,10 @@ AFRAME.registerComponent('tostart', {
 
 
         let sphereloader = () => {
+
+
             sky.setAttribute("src", "#bordeauxtheater");
+
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
             })
@@ -97,6 +101,19 @@ AFRAME.registerComponent('to1', {
 
         }
 
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+AFRAME.registerComponent('playvid', {
+
+    init: function () {
+        let sphereloader = () => {
+            window.addEventListener('click', function () {
+                document.querySelector('#test360').play();
+            });
+
+        }
         this.el.addEventListener('click', sphereloader);
     }
 });
