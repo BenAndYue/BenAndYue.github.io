@@ -81,9 +81,9 @@ AFRAME.registerComponent('playvid', {
 
     init: function () {
         let sphereloader = () => {
-/*            window.addEventListener('click', function () {
+            window.addEventListener('click', function () {
                 document.querySelector('#test360').play();
-            });*/
+            });
 
         }
         this.el.addEventListener('click', sphereloader);
