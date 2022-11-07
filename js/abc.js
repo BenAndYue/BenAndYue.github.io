@@ -1,27 +1,6 @@
 let punten = 0;
 
-AFRAME.registerComponent('backhome', {
-
-
-    init: function () {
-
-        let homeworldelements = document.querySelectorAll(".homeworld");
-        let sky = document.querySelector("#sky");
-
-        let gobackhome = () => {
-            sky.setAttribute("src", "#starsky");
-            homeworldelements.forEach((homeworldelement) => {
-                homeworldelement.setAttribute("visible", true)
-
-            })
-        }
-
-        this.el.addEventListener('click', gobackhome);
-
-    }
-});
-
-
+//naar text
 AFRAME.registerComponent('sphereexpand', {
 
     init: function () {
@@ -38,44 +17,40 @@ AFRAME.registerComponent('sphereexpand', {
                 homeworldelement.setAttribute("visible", false)
             })
             loadingInintro()
+            const element = document.getElementById('photospheredisplay');
+            element.remove();
         }
 
         let loadingInintro = () => {
             introelements.forEach((introelement) => {
                 introelement.setAttribute('visible', true)
             })
-            // document.getElementById('intro').setAttribute('visible', 'true')
-
         }
-
         this.el.addEventListener('click', sphereloader);
     }
 });
-
+// naar intro
 AFRAME.registerComponent('tostart', {
-
     init: function () {
-
         let current = document.querySelectorAll(".intro");
         let next = document.querySelectorAll(".start");
-
-
         let sphereloader = () => {
-
-
-            sky.setAttribute("src", "#bordeauxtheater");
-
+            sky.setAttribute("src", "#opening");
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
             })
             loadingInintro()
 
+            window.addEventListener('click', function () {
+                document.querySelector('#opening').play();
+            });
         }
+        // let element = document.getElementById('pac');
+        // element.remove();
         let loadingInintro = () => {
             next.forEach((nextelement) => {
                 nextelement.setAttribute('visible', true)
             })
-
         }
 
         this.el.addEventListener('click', sphereloader);
@@ -83,15 +58,11 @@ AFRAME.registerComponent('tostart', {
 });
 
 AFRAME.registerComponent('to1', {
-
     init: function () {
-
         let current = document.querySelectorAll(".start");
-        let next = document.querySelectorAll(".scene1");
+        let next = document.querySelectorAll(".scene11");
         let sphereloader = () => {
-            console.log("start")
-            sky.setAttribute("src", "#test360");
-
+            sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
             })
@@ -101,9 +72,7 @@ AFRAME.registerComponent('to1', {
             next.forEach((nextelement) => {
                 nextelement.setAttribute('visible', true)
             })
-
         }
-
         this.el.addEventListener('click', sphereloader);
     }
 });
@@ -112,14 +81,13 @@ AFRAME.registerComponent('playvid', {
 
     init: function () {
         let sphereloader = () => {
-            window.addEventListener('click', function () {
+/*            window.addEventListener('click', function () {
                 document.querySelector('#test360').play();
-            });
+            });*/
 
         }
         this.el.addEventListener('click', sphereloader);
     }
 });
-
-
+//function for removing elements
 

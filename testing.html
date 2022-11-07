@@ -1,9 +1,8 @@
 <html>
 
 <head>
-    <title> Out story</title>
+    <title> Our story</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-
     <script src="js/abc.js"></script>
 </head>
 
@@ -15,8 +14,8 @@
         <img crossOrigin="anonymous" id="starsky"
              src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2Fstarry%20night.jpg?1547158907338">
         <img crossOrigin="anonymous" id="bordeauxtheater"
-             src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2FOp%C3%A9ra_National_de_Bordeaux%20(1).jpg?1547235572572">
-        <video id="test360" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+             src="assets/background.jpg">
+        <video id="opening" preload="auto" src="assets/opening.mp4" crossOrigin="anonymous"></video>
     </a-assets>
 
     <a-entity id="camera" position="0 1.6 1" camera look-controls wasd-controls>
@@ -27,8 +26,9 @@
 
 
     <a-sky id="sky" src="#starsky"></a-sky>
-
+    <!--home-->
     <a-entity id="architecture" class="homeworld">
+        <!--        ground-->
         <a-box width="12" color="black" position="0 -1 4" depth="12"></a-box>
         <a-box width="0.1" color="white" position="6 -1 4" depth="12"></a-box>
         <a-box
@@ -49,6 +49,7 @@
                 position="0 -1 10"
                 depth="0.1"
         ></a-box>
+        <a-circle id="homebutton" position="0 0 0" rotation="-90 0 0"></a-circle>
 
         <a-entity
                 id="color"
@@ -57,11 +58,7 @@
                 scale="5 5"
         >
         </a-entity>
-
-        <a-circle id="homebutton" position="0 0 0" rotation="-90 0 0" backhome></a-circle>
-
     </a-entity>
-
     <a-entity id="photospheredisplay" class="homeworld" position="0 0 -5">
         <a-box color="black" rotation="0 0 0" width="1" height="2" depth=".5"></a-box>
         <a-sphere position="0 1.8 0" radius=".7" src="#bordeauxtheater" sphereexpand
@@ -69,46 +66,64 @@
         ></a-sphere>
     </a-entity>
 
-
-    <!--intro scene-->
     <!--     intro -->
-    <a-entity class="intro" visible="false">
+    <a-entity id="startButton2" class="intro" visible="false">
 
-
-        <!--        <a-circle color="blue" position="3 1 -3" rotation="0 0 0"></a-circle>-->
-
-        <!--        Jij als ergotherapeut komt zo bij Lars, je hebt hem in het verleden wel gezien, maar dat is alweer bijna een jaar geleden.-->
-
-        <!--        Lars heeft een epileptische aanval gehad door het niet regelmatig innemen van zijn medicatie. Hierdoor vindt zijn moeder het niet veilig om hem zelfstandig te laten wonen en heeft een ergotherapeut ingeschakeld  "-->
+        <a-text
+                value="Jij als ergotherapeut komt zo bij Lars, je hebt hem in het verleden wel gezien, maar dat is alweer bijna een jaar geleden."
+                position="-5 5 -8" color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-text value="Lars heeft een epileptische aanval gehad door het niet regelmatig innemen van zijn medicatie. Hierdoor vindt zijn moeder het niet veilig om hem zelfstandig te laten wonen en heeft een ergotherapeut ingeschakeld"
+                position="-5 3 -8" color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-triangle
-
-                color="black"
-                position="5.825 0.621 -5.97"
+                color="white"
+                position="4 0.621 -4"
                 rotation="0 -45 -90"
                 tostart
         ></a-triangle>
+
     </a-entity>
 
-    <!--start-->
-    <a-entity class="start" visible="false">
-        <a-triangle
 
-                color="green"
-                position="5.825 1 -5.98"
-                rotation="0 -45 -90"
+    <!--start/opening-->
+    <a-entity class="start" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 5" rotation="0 -110 0"
+                color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-triangle
+                color="black"
+                position="4 1 5"
+                rotation="0 -90 -90"
                 to1
         ></a-triangle>
 
     </a-entity>
 
-    <!--    videoTest -->
-
-    <a-entity class="scene1" visible="false">
+    <!--    Vraag 1: -->
+    <a-entity class="scene11" visible="false">
+        <a-text value="1 Welke vraag stel je als eerst na binnenkomst zodra je jezelf hebt voorgesteld?"
+                position="13 5 -5" rotation="0 -90 0"
+                color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-text value="a Hoe gaat het met je??"
+                position="13 4 -5" rotation="0 -90 0"
+                color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-text value="b Wat is er gebeurd?"
+                position="13 5 -5" rotation="0 -90 0"
+                color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-text value="c Hoe was je weekend?"
+                position="13 5 -5" rotation="0 -90 0"
+                color="aqua"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-triangle
                 color="red"
                 position="5.825 1.5 -5.99"
                 rotation="0 -45 -90"
-                playvid
+
         ></a-triangle>
     </a-entity>
 
