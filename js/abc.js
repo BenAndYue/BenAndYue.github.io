@@ -1,3 +1,5 @@
+let punten = 0;
+
 AFRAME.registerComponent('backhome', {
 
 
@@ -10,6 +12,7 @@ AFRAME.registerComponent('backhome', {
             sky.setAttribute("src", "#starsky");
             homeworldelements.forEach((homeworldelement) => {
                 homeworldelement.setAttribute("visible", true)
+
             })
         }
 
