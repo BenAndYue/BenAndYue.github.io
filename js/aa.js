@@ -71,14 +71,33 @@ function loop() {
     }
 
     if (collisionFloor(ball, floor)) {
-        resetball()
+        console.log(ball)
+        resetball(ball)
     }
+
 }
 
-function resetball() {
+function resetball(ball) {
     document.getElementById("ballp").addState("grabbed");
-    document.getElementById("ballp").setAttribute('position', {x: -3, y: 8, z: -3})
-    document.getElementById("ballp").addState("grabbed");
+    document.getElementById("ballp").setAttribute("physx-body", "type: static;")
+
+
+
+    document.getElementById("ballp").setAttribute('position', {x: 0, y: 11, z: -3})
+    let y1 = ball.object3D.position.y;
+    console.log(y1)
+
+    ball.object3D.position.y = 11;
+
+    const tw = ball.object3D.position.y
+    console.log(tw)
+
+
+    //
+    // document.getElementById("ballp").setAttribute('position', {x: -3, y: 9, z: -3})
+    //
+    // console.log(y1)
+
 
 }
 
@@ -107,11 +126,10 @@ function collisionFloor(obj1, obj2) {
     let y1 = obj1.object3D.position.y;
     let y2 = obj2.object3D.position.y;
     y2 = 0.2 + y2
-
-
-    console.log(obj1)
     distance = y1 - y2
-    return distance < 0;
+
+    console.log(distance)
+    return distance < 0.4;
 }
 
 function collision2(obj1, obj2) {
