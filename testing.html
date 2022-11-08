@@ -4,6 +4,7 @@
     <title> Our story</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="js/abc.js"></script>
+    <script src="js/scene1.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
 
     </a-entity>
 
-<!--    <a-entity id="R" laser-controls="hand:right"></a-entity>-->
+    <!--    <a-entity id="R" laser-controls="hand:right"></a-entity>-->
 
 
     <a-sky id="sky" src="#starsky"></a-sky>
@@ -72,11 +73,11 @@
     <a-entity id="startButton2" class="intro" visible="false">
 
         <a-text
-                value="Jij als ergotherapeut komt zo bij Lars, je hebt hem in het verleden wel gezien, maar dat is alweer bijna een jaar geleden."
-                position="-5 5 -8" color="aqua"
+                value="Lars is een jongen van 25 jaar met een licht verstandelijke beperking en epilepsie. Voor zijn epilepsie heeft hij een goed ingestelde anti-epileptica. Lars woont op zichzelf en wordt hierbij begeleid door Vanessa. Zij is begeleider van de zorginstelling die Lars hulp biedt, zodat hij zelfstandig kan wonen. Lars heeft jaren geen epileptische aanval gehad, maar onlangs heeft hij voor de tweede keer in drie maanden een aanval gehad. De moeder van Lars is erg bezorg, omdat hij de laatste keer gevallen is en vraagt zich af of hij niet meer zorg nodig heeft. Lars is door middel van een verwijzing bij ergotherapie terechtgekomen, waar een vraagverhelderend gesprek zal plaatsvinden."
+                position="-10 6.5 -14" color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-text value="Lars heeft een epileptische aanval gehad door het niet regelmatig innemen van zijn medicatie. Hierdoor vindt zijn moeder het niet veilig om hem zelfstandig te laten wonen en heeft een ergotherapeut ingeschakeld"
-                position="-5 3 -8" color="aqua"
+        <a-text value="Je komt zo als ergotherapeut bij Lars thuis. Je hebt Lars nog niet eerder gezien en er vindt een vraagverhelderend gesprek plaats. Lars heeft een epileptische aanval gehad door het niet regelmatig innemen van zijn medicatie. Hierdoor vindt zijn moeder het niet veilig om hem zelfstandig te laten wonen en heeft een ergotherapeut ingeschakeld  "
+                position="5 6.5 -14" color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-triangle
                 color="white"
@@ -215,12 +216,18 @@
 
     <!--vid 3c-->
 
-<!--    cameras-->
-    <a-entity id="second camera" position="0 9 1" camera look-controls wasd-controls>
+    <!--    cameras-->
+    <a-entity id="second-camera" position="0 10 1" camera look-controls wasd-controls>
         <a-entity cursor="rayOrigin: mouse"></a-entity>
     </a-entity>
 
+    <a-entity id="third-camera" position="0 20 1" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
+    </a-entity>
 
+    <a-entity id="fourth-camera" position="0 30 1" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
+    </a-entity>
 </a-scene>
 
 

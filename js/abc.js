@@ -17,8 +17,6 @@ AFRAME.registerComponent('sphereexpand', {
                 homeworldelement.setAttribute("visible", false)
             })
             loadingInintro()
-            const element = document.getElementById('photospheredisplay');
-            element.remove();
         }
 
         let loadingInintro = () => {
@@ -127,14 +125,16 @@ AFRAME.registerComponent('1c', {
         let next = document.querySelectorAll(".scene1c");
         let sphereloader = () => {
             //set vraag 1a
-            sky.setAttribute("src", "#bordeauxtheater");
+            // sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
-                currentelement.setAttribute("visible", false)
-
+                // currentelement.setAttribute("visible", false);
                 var secondCameraEl = document.getElementById("second-camera");
+                console.log(secondCameraEl)
                 secondCameraEl.setAttribute('camera', 'active', true);
             })
-            loadingInintro()
+
+
+            // loadingInintro()
         }
         let loadingInintro = () => {
             next.forEach((nextelement) => {
@@ -144,7 +144,6 @@ AFRAME.registerComponent('1c', {
         this.el.addEventListener('click', sphereloader);
     }
 });
-
 
 
 AFRAME.registerComponent('playvid', {
@@ -157,6 +156,30 @@ AFRAME.registerComponent('playvid', {
 
             });
 
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+
+AFRAME.registerComponent('twoCorrectAfterScene', {
+    init: function () {
+        let current = document.querySelectorAll(".scene11");
+        let next = document.querySelectorAll(".scene1b");
+        let sphereloader = () => {
+            //TODO
+            current.forEach((currentelement) => {
+                // currentelement.setAttribute("visible", false);
+                var secondCameraEl = document.getElementById("third-camera");
+                console.log(secondCameraEl)
+                secondCameraEl.setAttribute('camera', 'active', true);
+            })
+            loadingInintro()
+        }
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
         }
         this.el.addEventListener('click', sphereloader);
     }
