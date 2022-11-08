@@ -114,16 +114,16 @@ function collision2(obj1, obj2) {
     return distance < 0.7;
 }
 
-AFRAME.registerComponent('reset', {
 
+
+AFRAME.registerComponent('x-button-listener', {
     init: function () {
-        let sphereloader = () => {
+        var el = this.el;
+        el.addEventListener('xbuttondown', function (evt) {
+            ball.remove()
 
-       console.log("hallo")
-        }
-        this.el.addEventListener('click', sphereloader);
+        });
     }
 });
-
 
 
