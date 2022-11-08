@@ -157,11 +157,11 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
     <a-entity physx-body="type: static;" rotation="0 90 0" material="emissive: #000000; alphaTest: 0.52; opacity: 1; "
               physx-body="type: kinematic; emitCollisionEvents: true"
               geometry="primitive: box; width: 9; height: 30; depth: 1" position="-5 0 -14"></a-entity>
-    <a-box physx-body="type: kinematic; emitCollisionEvents: true" width="0.1" depth="4" height="1"
+    <a-box physx-body="type: static;" width="0.1" depth="4" height="1"
            position="0.14087000489234924 2.7098300457000732 -16.790000915527344" color="#BBBBBB"
            raycaster-target="glowOnHover: false"
            material="emissive: #000000; alphaTest: 0.52; opacity: 0.65; height: 256.11; metalness: 1"
-           geometry="depth: 4.3; height: 3" physx-material="density: NaN" grab-options="scalable"
+           geometry="depth: 4.3; height: 3"  grab-options="scalable"
            class="raycaster-target" rotation="4.7374910974259624e-14 90.00000769819569 -2.9620501585917803e-22"
            scale="-2.649336707906037 9.19001 5.248793240430247">
     </a-box>
@@ -249,19 +249,19 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
     </a-box>
 
     <!--    nummers voor punten-->
-    <a-text value="100" position="5.2 8 -9.14679" color="black"
+    <a-text value="100" position="5.2 9 -9.14679" color="black"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
-    <a-text value="200" position="5.2 9 -9.14679" color="green"
+    <a-text value="200" position="5.2 10 -9.14679" color="green"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
-    <a-text value="300" position="5.2 10 -9.14679" color="blue"
+    <a-text value="300" position="5.2 11 -9.14679" color="blue"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
-    <a-text value="500" position="5.2 11 -9.14679" color="orange"
+    <a-text value="500" position="5.2 12 -9.14679" color="orange"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
-    <a-text value="1000" position="5.2 12 -9.14679" color="red"
+    <a-text value="1000" position="5.2 13 -9.14679" color="red"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
 
     <!--    scoreboard-->
-    <a-text id="score" value="punten 0" position="-6.98732 10 -9.14679" color="aqua"
+    <a-text id="score" value="punten 0" position="-6.98732 13 -9.14679" color="aqua"
             text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
 
     <!--    ball-->
@@ -300,9 +300,11 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
     </a-sphere>
 
     <a-sphere id="targetOut"
+              physx-body="type: dynamic;"
               raycaster-target="canGrab: false;"
-              physx-body="type: static;"
-              color="black" position="0 0.4 -9.3" radius="1"></a-sphere>
+              position="-4 9 -2"
+              radius="0.3"
+              color="rood">></a-sphere>
 
 
 
