@@ -19,20 +19,23 @@
         <video id="opening" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
     </a-assets>
 
-    <a-entity id="camera" position="0 1.6 1" camera look-controls wasd-controls>
-        <a-entity cursor="rayOrigin: mouse"></a-entity>
-    </a-entity>
+<!--    <a-entity id="camera" position="0 1.6 1" camera look-controls wasd-controls>-->
+<!--        <a-entity cursor="rayOrigin: mouse"></a-entity>-->
+<!--    </a-entity>-->
 
-<<<<<<< HEAD
+a
     <a-entity id="R" laser-controls="hand:right"></a-entity>
-=======
+
     <!--    <a-entity id="R" laser-controls="hand:right"></a-entity>-->
->>>>>>> 6369d01483d3a792ae844aaeff5741b6c2c72ba3
+
 
 
     <a-sky id="sky" src="#starsky"></a-sky>
     <!--home-->
     <a-entity id="architecture" class="homeworld">
+        <a-box width="12" color="white" position="0 10 -2" depth="1" tot></a-box>
+
+
         <!--        ground-->
         <a-box width="12" color="black" position="0 -1 4" depth="12"></a-box>
         <a-box width="0.1" color="white" position="6 -1 4" depth="12"></a-box>
@@ -194,17 +197,17 @@
                 position="13 3 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13 3 -5" color="white" 1a></a-box>
+        <a-box position="13 3 -5" color="white" 2a></a-box>
         <a-text value="B Wat is er gebeurd?"
                 position="13 1 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13 1 -5" color="white" 1b></a-box>
+        <a-box position="13 1 -5" color="white" 2b></a-box>
         <a-text value="C Hoe was je weekend?"
                 position="13 -1 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13 -1 -5" color="white" 1c switch1></a-box>
+        <a-box position="13 -1 -5" color="white" 2c switch1></a-box>
         <a-triangle
                 color="red"
                 position="5.825 1.5 -5.99"
@@ -221,6 +224,10 @@
     <!--    cameras-->
     <a-entity id="second-camera" position="0 10 1" camera look-controls wasd-controls>
         <a-entity cursor="rayOrigin: mouse"></a-entity>
+    </a-entity>
+
+    <a-entity id='cameraWrapper' position="0 10 0">
+        <a-camera></a-camera>
     </a-entity>
 
     <a-entity id="third-camera" position="0 20 1" camera look-controls wasd-controls>

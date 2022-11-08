@@ -131,6 +131,8 @@ AFRAME.registerComponent('1c', {
                 var secondCameraEl = document.getElementById("second-camera");
                 console.log(secondCameraEl)
                 secondCameraEl.setAttribute('camera', 'active', true);
+                document.querySelector("#cameraWrapper").object3D.position.set(1, 1, 1);
+
             })
 
 
@@ -185,3 +187,19 @@ AFRAME.registerComponent('twoCorrectAfterScene', {
     }
 });
 
+AFRAME.registerComponent('tot', {
+    init: function () {
+
+        let sphereloader = () => {
+
+
+            const camera = document.querySelector("#cameraWrapper")
+            camera.setAttribute('position', '10 10 10')
+
+            // loadingInintro()
+        }
+
+
+        this.el.addEventListener('click', sphereloader);
+    }
+});
