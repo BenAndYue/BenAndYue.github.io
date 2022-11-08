@@ -20,9 +20,11 @@
 
     <a-entity id="camera" position="0 1.6 1" camera look-controls wasd-controls>
         <a-entity cursor="rayOrigin: mouse"></a-entity>
+        <a-entity id="R" laser-controls="hand:right"></a-entity>
+
     </a-entity>
 
-    <a-entity laser-controls="hand:right"></a-entity>
+<!--    <a-entity id="R" laser-controls="hand:right"></a-entity>-->
 
 
     <a-sky id="sky" src="#starsky"></a-sky>
@@ -199,11 +201,12 @@
                 position="13 -1 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13 -1 -5" color="white" 1c></a-box>
+        <a-box position="13 -1 -5" color="white" 1c switch1></a-box>
         <a-triangle
                 color="red"
                 position="5.825 1.5 -5.99"
                 rotation="0 -45 -90"
+                switch1
         ></a-triangle>
     </a-entity>
     <!--vid 2a-->
@@ -211,6 +214,13 @@
     <!--vid 2b-->
 
     <!--vid 3c-->
+
+<!--    cameras-->
+    <a-entity id="second camera" position="0 9 1" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
+    </a-entity>
+
+
 </a-scene>
 
 

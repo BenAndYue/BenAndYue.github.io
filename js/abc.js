@@ -85,7 +85,7 @@ AFRAME.registerComponent('1a', {
         let next = document.querySelectorAll(".scene1a");
         let sphereloader = () => {
             //set vraag 1a
-            sky.setAttribute("src", "#bordeauxtheater");
+            sky.setAttribute("src", "#scen1a");
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
             })
@@ -106,7 +106,7 @@ AFRAME.registerComponent('1b', {
         let next = document.querySelectorAll(".scene1b");
         let sphereloader = () => {
             //set vraag 1a
-            sky.setAttribute("src", "#bordeauxtheater");
+            sky.setAttribute("src", "#scene1b");
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
             })
@@ -130,6 +130,9 @@ AFRAME.registerComponent('1c', {
             sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
+
+                var secondCameraEl = document.getElementById("second-camera");
+                secondCameraEl.setAttribute('camera', 'active', true);
             })
             loadingInintro()
         }
@@ -150,12 +153,12 @@ AFRAME.registerComponent('playvid', {
         let sphereloader = () => {
             window.addEventListener('click', function () {
                 document.querySelector('#test360').play();
+
+
             });
 
         }
         this.el.addEventListener('click', sphereloader);
     }
 });
-
-//function for removing elements
 
