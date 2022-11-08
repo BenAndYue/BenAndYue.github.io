@@ -22,7 +22,11 @@ window.onload = function () {
     target1001 = document.getElementById("target1001")
     target1002 = document.getElementById("target1002")
 
+    //floor
+    floor = document.getElementById("floor")
+
     loop()
+
 
 }
 
@@ -39,36 +43,42 @@ function loop() {
     //200 punten
     if (collision2(target200, ball)) {
         console.log("DONE")
-        ball.remove()
+        // ball.remove()
         score.setAttribute("value", points + 200 + " punten")
     }
     //300
     if (collision2(target300, ball)) {
         console.log("DONE")
-        ball.remove()
+        // ball.remove()
         score.setAttribute("value", points + 300 + " punten")
     }
     //500
     if (collision2(target500, ball)) {
         console.log("DONE")
-        ball.remove()
+        // ball.remove()
         score.setAttribute("value", points + 500 + " punten")
     }
 //    1000
     if (collision2(target1001, ball)) {
         console.log("DONE")
-        ball.remove()
+        // ball.remove()
         score.setAttribute("value", points + 1000 + " punten")
     }
     if (collision2(target1002, ball)) {
         console.log("DONE")
-        ball.remove()
+        // ball.remove()
         score.setAttribute("value", points + 1000 + " punten")
     }
 
-
+    if (collisionFloor(ball, floor)) {
+        resetball()
+    }
 }
 
+function resetball() {
+    document.getElementById("ballp").addState("grabbed");
+    document.getElementById("ballp").setAttribute('position', {x: -3, y: 8, z: -3})
+}
 
 //method to check if target hits x
 //obj1 = target, 2 = ball
@@ -88,6 +98,18 @@ function collision(obj1, obj2) {
     );
 
     return distance < 1.1;
+}
+
+function collisionFloor(obj1, obj2) {
+
+    let y1 = obj1.object3D.position.y;
+    let y2 = obj2.object3D.position.y;
+    y2 = 0.2 + y2
+
+
+    console.log(obj1)
+    distance = y1 - y2
+    return distance < 0;
 }
 
 function collision2(obj1, obj2) {
@@ -116,14 +138,6 @@ function collision2(obj1, obj2) {
 
 
 
-AFRAME.registerComponent('x-button-listener', {
-    init: function () {
-        var el = this.el;
-        el.addEventListener('xbuttondown', function (evt) {
-            ball.remove()
 
-        });
-    }
-});
 
 
