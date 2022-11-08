@@ -2,17 +2,23 @@
 
 let j = 0;
 let box, projectile, z = 0, dz = -0.1;
-let points = 0;
+let points = localStorage.getItem("points");
+
 
 
 window.onload = function () {
     //hud
-    score = document.getElementById("score")
 
+    score = document.getElementById("score")
 
     //target and ball;
     target = document.getElementById("target")
     ball = document.getElementById("ballp")
+    ball2 = document.getElementById("ballp2")
+    ball3 = document.getElementById("ballp3")
+    elite = document.getElementById("elite")
+    out = document.getElementById('targetOut')
+
 
     //targets
     target100 = document.getElementById("target100")
@@ -24,82 +30,119 @@ window.onload = function () {
 
     //floor
     floor = document.getElementById("floor")
-
     loop()
-
-
 }
 
 function loop() {
-    setTimeout(loop, 50)
+    setTimeout(loop, 100)
 
     //100 punten
-    if (collision(target100, ball)) {
-        // console.log("DONE")
-        // ball.remove()
+    if (collision(target100, ball) ) {
+        console.log("DONE")
+        ball.remove()
+        score.setAttribute("value", points + 100 + " punten")
+    }
+    if (collision(target100, ball2) ) {
+        console.log("DONE")
+        ball2.remove()
+        score.setAttribute("value", points + 100 + " punten")
+    }
+    if (collision(target100, ball3) ) {
+        console.log("DONE")
+        ball3.remove()
         score.setAttribute("value", points + 100 + " punten")
     }
 
     //200 punten
     if (collision2(target200, ball)) {
         console.log("DONE")
-        // ball.remove()
+        ball.remove()
+        score.setAttribute("value", points + 200 + " punten")
+    }
+    if (collision2(target200, ball2)) {
+        console.log("DONE")
+        ball2.remove()
+        score.setAttribute("value", points + 200 + " punten")
+    }
+    if (collision2(target200, ball3)) {
+        console.log("DONE")
+        ball3.remove()
         score.setAttribute("value", points + 200 + " punten")
     }
     //300
     if (collision2(target300, ball)) {
         console.log("DONE")
-        // ball.remove()
+        ball.remove()
+        score.setAttribute("value", points + 300 + " punten")
+    }
+    if (collision2(target300, ball2)) {
+        console.log("DONE")
+        ball2.remove()
+        score.setAttribute("value", points + 300 + " punten")
+    }
+    if (collision2(target300, ball3)) {
+        console.log("DONE")
+        ball3.remove()
         score.setAttribute("value", points + 300 + " punten")
     }
     //500
     if (collision2(target500, ball)) {
         console.log("DONE")
-        // ball.remove()
+        ball.remove()
         score.setAttribute("value", points + 500 + " punten")
     }
-//    1000
+    if (collision2(target500, ball2)) {
+        console.log("DONE")
+        ball2.remove()
+        score.setAttribute("value", points + 500 + " punten")
+    }
+    if (collision2(target500, ball3)) {
+        console.log("DONE")
+        ball3.remove()
+        score.setAttribute("value", points + 500 + " punten")
+    }
+    //1000
     if (collision2(target1001, ball)) {
         console.log("DONE")
-        // ball.remove()
+        ball.remove()
         score.setAttribute("value", points + 1000 + " punten")
     }
+    if (collision2(target1001, ball2)) {
+        console.log("DONE")
+        ball2.remove()
+        score.setAttribute("value", points + 1000 + " punten")
+    }
+    if (collision2(target1001, ball3)) {
+        console.log("DONE")
+        ball3.remove()
+        score.setAttribute("value", points + 1000 + " punten")
+    }
+
     if (collision2(target1002, ball)) {
         console.log("DONE")
-        // ball.remove()
+        ball.remove()
+        score.setAttribute("value", points + 1000 + " punten")
+    }
+    if (collision2(target1002, ball2)) {
+        console.log("DONE")
+        ball2.remove()
+        score.setAttribute("value", points + 1000 + " punten")
+    }
+    if (collision2(target1002, ball3)) {
+        console.log("DONE")
+        ball3.remove()
         score.setAttribute("value", points + 1000 + " punten")
     }
 
-    if (collisionFloor(ball, floor)) {
-        console.log(ball)
-        resetball(ball)
+    if (collision(out, elite) ) {
+    //save punten
+        localStorage.setItem("points", points);
+        window.reload()
     }
 
 }
 
-function resetball(ball) {
-    document.getElementById("ballp").addState("grabbed");
-    document.getElementById("ballp").setAttribute("physx-body", "type: static;")
 
-
-
-    document.getElementById("ballp").setAttribute('position', {x: 0, y: 11, z: -3})
-    let y1 = ball.object3D.position.y;
-    console.log(y1)
-
-    ball.object3D.position.y = 11;
-
-    const tw = ball.object3D.position.y
-    console.log(tw)
-
-
-    //
-    // document.getElementById("ballp").setAttribute('position', {x: -3, y: 9, z: -3})
-    //
-    // console.log(y1)
-
-
-}
 
 //method to check if target hits x
 //obj1 = target, 2 = ball
@@ -117,20 +160,10 @@ function collision(obj1, obj2) {
         (y1 - y2) * (y1 - y2) +
         (z1 - z2) * (z1 - z2)
     );
-
-    return distance < 1.1;
+    return distance < 1.28;
 }
 
-function collisionFloor(obj1, obj2) {
 
-    let y1 = obj1.object3D.position.y;
-    let y2 = obj2.object3D.position.y;
-    y2 = 0.2 + y2
-    distance = y1 - y2
-
-    console.log(distance)
-    return distance < 0.4;
-}
 
 function collision2(obj1, obj2) {
 

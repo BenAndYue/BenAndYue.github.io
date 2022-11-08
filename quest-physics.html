@@ -73,7 +73,7 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
                 oculus-touch-controls="hand: right"
                 raycaster="objects: .raycaster-target, .environmentGround;"
                 raycaster-extras="controllerListenerId: #controller-data;
-                              beamImageSrc: #gradient; beamLength: 0.5;">
+                                beamLength: 0.5;">
         </a-entity>
 
     </a-entity>
@@ -83,6 +83,14 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            class="environmentGround"
            position="0 7.5 0"
            width="10" depth="10" height="0.1"
+           material="src: #floor; repeat: 1;"
+           shadow="receive: true;">
+    </a-box>
+
+    <a-box physx-body="type: static;"
+           class="environmentGround"
+           position="0 -0.1 0"
+           width="20" depth="20" height="0.1"
            material="src: #floor; repeat: 1;"
            shadow="receive: true;">
     </a-box>
@@ -106,28 +114,36 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
 
     <!-- Walls -->
     <a-box physx-body="type: static;"
-           position="0 0.51 10"
+           position="0 8 5"
            width="20" depth="0.1" height="1"
-           material="src: #crate; repeat: 5 1;">
+           material="src:  repeat: 5 1;">
     </a-box>
     <a-box physx-body="type: static;"
-           position="10 0.51 0"
+           position="5 8 0"
            width="0.1" depth="20" height="1"
-           material="src: #crate; repeat: 5 1;">
+           material="src:  repeat: 5 1;">
     </a-box>
     <a-box physx-body="type: static;"
-           position="-10 0.51 0"
+           position="-5 8 0"
            width="0.1" depth="20" height="1"
-           material="src: #crate; repeat: 5 1;">
+           material="src:  repeat: 5 1;">
     </a-box>
 
     <!-- Ramp -->
-    <a-box physx-body="type: static" depth="5" width="5" position="0 1 -10" rotation="45.00001012537989 0 0"
-           material="color: #88sa8888; repeat: 5 1" geometry="depth: 6.57; height: 0.12" physx-material="density: NaN"
-           grab-options="scalable" scale="1.7600000000000027 2.0715326758746153 2.8120107836787227"
-           physx-body="type: kinematic; emitCollisionEvents: true">
+<!--    <a-box physx-body="type: static" depth="5" width="5" position="0 1 -10" rotation="45.00001012537989 0 0"-->
+<!--           material="color: #88sa8888; repeat: 5 1" geometry="depth: 6.57; height: 0.12"-->
+<!--           grab-options="scalable" scale="1.7600000000000027 2.0715326758746153 2.8120107836787227"-->
+    >
     </a-box>
-
+    <a-box physx-body="type: static;"
+           id="floor"
+           depth="20" width="20" height="0.12"
+           class="environmentGround"
+           rotation="45.00001012537989 0 0"
+           position="0 1 -10"
+           material="src: #floor; repeat: 1;"
+           shadow="receive: true;">
+    </a-box>
     <!--    Backboard-->
     <a-entity physx-body="type: static;" material="emissive: #000000; alphaTest: 0.52; opacity: 1; "
               physx-body="type: kinematic; emitCollisionEvents: true"
@@ -253,10 +269,40 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
               physx-body="type: dynamic;"
               raycaster-target="canGrab: true;"
               physics-grab
-              position="0 11 -6"
+              position="0 9 -4"
               radius="0.3"
               color="violet">
     </a-sphere>
+    <a-sphere id="ballp2"
+              physx-body="type: dynamic;"
+              raycaster-target="canGrab: true;"
+              physics-grab
+              position="1 9 -4"
+              radius="0.3"
+              color="violet">
+    </a-sphere>
+    <a-sphere id="ballp3"
+              physx-body="type: dynamic;"
+              raycaster-target="canGrab: true;"
+              physics-grab
+              position="2 9 -4"
+              radius="0.3"
+              color="violet">
+    </a-sphere>
+
+    <a-sphere id="elite"
+              physx-body="type: dynamic;"
+              raycaster-target="canGrab: true;"
+              physics-grab
+              position="-4 9 -4"
+              radius="0.3"
+              color="black">
+    </a-sphere>
+
+    <a-sphere id="targetOut"
+              raycaster-target="canGrab: false;"
+              physx-body="type: static;"
+              color="black" position="0 0.4 -9.3" radius="1"></a-sphere>
 
 
 
@@ -285,38 +331,6 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
               raycaster-target="canGrab: false;"
               physx-body="type:aw static;"
               color="red" position="3 6.3 -15.2" radius="0.4"></a-sphere>
-
-
-    <a-sphere physx-body="type: dynamic;" physx-material="restitution: 0.8;"
-              raycaster-target="canGrab: true;"
-              physics-grab
-              position="3.5 8 -4.8"
-              radius="0.3"
-              material="src:#ball; color:green;">
-    </a-sphere>
-
-    <a-sphere physx-body="type: dynamic;" physx-material="restitution: 0.8;"
-              raycaster-target="canGrab: true;"
-              physics-grab
-              position="3.5 9 -4.8"
-              radius="0.3"
-              material="src:#ball; color:green;">
-    </a-sphere>
-    <a-sphere physx-body="type: dynamic;" physx-material="restitution: 0.8;"
-              raycaster-target="canGrab: true;"
-              physics-grab
-              position="3. 9 -4.8"
-              radius="0.3"
-              material="src:#ball; color:green;">
-    </a-sphere>
-    <a-sphere physx-body="type: dynamic;" physx-material="restitution: 0.8;"
-              raycaster-target="canGrab: true;"
-              physics-grab
-              position="2. 9 -4.8"
-              radius="0.3"
-              material="src:#ball; color:green;">
-    </a-sphere>
-
 </a-scene>
 
 </body>
