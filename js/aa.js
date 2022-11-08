@@ -78,6 +78,8 @@ function loop() {
 function resetball() {
     document.getElementById("ballp").addState("grabbed");
     document.getElementById("ballp").setAttribute('position', {x: -3, y: 8, z: -3})
+    document.getElementById("ballp").addState("grabbed");
+
 }
 
 //method to check if target hits x
