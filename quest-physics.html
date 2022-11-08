@@ -30,66 +30,7 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
         tick: function () {
         }
     });
-    AFRAME.registerComponent("dice-spawner", {
-        init: function ()
-        {
-            let modelArray = ["#d12", "#d20"];
-            let colorArray = ["#FFFFFF"];
 
-            this.diceElementArray = [];
-            this.diceTeleported   = [];
-            for (let i = 0; i < 10; i++)
-            {
-                let entity = document.createElement("a-entity");
-                entity.setAttribute("id", "poly" + i);
-                let x = (i % 6 - 2.5) / 2;
-                let y = Math.randomFloat(7, 15);
-                let z = (Math.floor(i/6) - 2.5) / 2;
-                entity.setAttribute( "position", {x: x, y: y, z: z} );
-                entity.setAttribute( "physx-body", {type: "dynamic"} );
-                entity.setAttribute( "gltf-model", modelArray.random() );
-                this.el.appendChild(entity);
-                this.diceElementArray.push(entity);
-                this.diceTeleported.push(false);
-            }
-        },
-
-        tick: function()
-        {
-
-            for (let i = 0; i < this.diceElementArray.length; i++)
-            {
-                if ( this.diceTeleported[i] )
-                {
-                    // restore dynamic physics
-                    this.diceElementArray[i].removeState("grabbed");
-
-                    // reset linear velocity
-                    this.diceElementArray[i].components["physx-body"].rigidBody.setLinearVelocity({x:0, y:0, z:0}, true);
-
-                    this.diceTeleported[i] = false;
-                }
-
-                // some collisions cause objects to fly off into the sky
-                if (this.diceElementArray[i].object3D.position.y < -2 ||
-                    this.diceElementArray[i].object3D.position.y > 20   )
-                {
-                    // "grabbed" state temporarily disables dynamic physics, allows position to be set directly
-                    this.diceElementArray[i].addState("grabbed");
-
-                    // move back to top of tower
-                    let x = (i % 6 - 2.5) / 2;
-                    let y = 8;
-                    let z = (Math.floor(i/6) - 2.5) / 2;
-
-                    this.diceElementArray[i].object3D.position.set( x,y,z );
-
-                    // during next tick, restore dynamic physics
-                    this.diceTeleported[i] = true;
-                }
-            }
-        },
-    });
 </script>
 
 <a-scene environment="preset: tron;"
@@ -130,7 +71,7 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
         <a-entity
                 id="right-controller"
                 oculus-touch-controls="hand: right"
-                raycaster="objects: .raycaster-target, .environmentGround;"
+                
                 raycaster-extras="controllerListenerId: #controller-data;
                               beamImageSrc: #gradient; beamLength: 0.5;">
         </a-entity>
