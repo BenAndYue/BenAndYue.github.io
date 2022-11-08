@@ -13,58 +13,44 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
     <script src="js/physx.release.js"></script>
     <script src="js/physics.js"></script>
     <script src="js/aa.js"></script>
-
 </head>
-
 <body>
-
 <script>
     <!--grabbing item-->
     AFRAME.registerComponent("physics-grab", {
         init: function () {
             let self = this;
-
             this.el.addEventListener("raycaster-grabbed", function () {
                 self.el.addState("grabbed");
             });
-
             this.el.addEventListener("raycaster-released", function () {
                 self.el.removeState("grabbed");
             });
         },
-
         tick: function () {
-
         }
     });
-
-
 </script>
 
 <a-scene environment="preset: tron;"
          physx="autoLoad: true; delay: 1000; wasmUrl: js/physx.release.wasm; useDefaultScene: false;">
 
     <a-assets>
-        <img id="gradient" src="images/gradient-fade.png"/>
-        <img id="crate" src="images/crate.jpg"/>
-        <img id="floor" src="images/floor.jpeg"/>
-        <img id="pixels" src="images/pixels.png"/>
-        <img id="ball" src="images/basketball-gray.png"/>
-        <img id="hexagons" src="images/hexagons.png"/>
+        <img crossOrigin="anonymous" id="bordeauxtheater"
+             src="assets/spin.jpg">
     </a-assets>
-
-    <a-sky
-            color="#000337">
-    </a-sky>
-
+    <!--    discoball    -->
+    <a-sphere position="0 9 -13" radius=".7" src="#bordeauxtheater" sphereexpand
+              animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 500; loop: true; elasticity: 0"
+    ></a-sphere>
 
     <!--Setting up player-->
     <a-entity
+            cursor="rayOrigin: mouse"
             id="player"
             position="0 9 3"
             player-move="controllerListenerId: #controller-data;
                      navigationMeshClass: environmentGround;">
-
         <a-camera>
             <a-cursor>
             </a-cursor>
@@ -90,12 +76,24 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
         </a-entity>
 
     </a-entity>
-
-
     <!-- Floor -->
     <a-box physx-body="type: static;"
            class="environmentGround"
            position="0 0.02 0"
+           width="20" depth="20" height="0.1"
+           material="src: #floor; repeat: 1;"
+           shadow="receive: true;">
+    </a-box>
+    <a-box physx-body="type: static;"
+           class="environmentGround"
+           position="0 7.5 0"
+           width="10" depth="10" height="0.1"
+           material="src: #floor; repeat: 1;"
+           shadow="receive: true;">
+    </a-box>
+    <a-box physx-body="type: static;"
+           class="environmentGround"
+           position="0 0.81 0"
            width="20" depth="20" height="0.1"
            material="src: #floor; repeat: 1;"
            shadow="receive: true;">
@@ -107,13 +105,11 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            width="20" depth="0.1" height="1"
            material="src: #crate; repeat: 5 1;">
     </a-box>
-
     <a-box physx-body="type: static;"
            position="10 0.51 0"
            width="0.1" depth="20" height="1"
            material="src: #crate; repeat: 5 1;">
     </a-box>
-
     <a-box physx-body="type: static;"
            position="-10 0.51 0"
            width="0.1" depth="20" height="1"
@@ -148,7 +144,6 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            class="raycaster-target" rotation="4.7374910974259624e-14 90.00000769819569 -2.9620501585917803e-22"
            scale="-2.649336707906037 9.19001 5.248793240430247">
     </a-box>
-
 
     <!--    100-->
     <a-box physx-body="type: static" width="0.1" depth="9" height="1"
@@ -232,7 +227,6 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            scale="0.999996591014998 0.9999978568047527 0.999994753742057">
     </a-box>
 
-
     <!--    nummers voor punten-->
     <a-text value="100" position="5.2 8 -9.14679" color="black"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
@@ -246,7 +240,7 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
 
     <!--    scoreboard-->
-    <a-text id="score" value="punten 0" position="-6.98732 9 -9.14679" color="aqua"
+    <a-text id="score" value="punten 0" position="-6.98732 10 -9.14679" color="aqua"
             text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
 
     <!--    ball-->
@@ -254,39 +248,38 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
               physx-body="type: dynamic;" physx-material="restitution: 0.8;"
               raycaster-target="canGrab: true;"
               physics-grab
-              position="0 6 -12"
+              position="0 11 -2"
               radius="0.3"
               material="src:#ball; color:violet;">
     </a-sphere>
+
+    <a-text position="5 11 1.7" rotation="0 -90 0" value="Reset"></a-text>
+    <a-box id="reset" color="tomato" position="5 10 2" width="0.5"></a-box>
+    <a-text position="5 11 -0.45" rotation="0 -90 0" value="Spawn ball"></a-text>
+    <a-box  color="green" position="5 10 0" width="0.5"></a-box>
 
 
     <!--target-->
     <a-sphere id="target100"
               raycaster-target="canGrab: false;"
               physx-body="type: static;"
-              color="black" position="0 0.4 -9.3" radius="0.7"></a-sphere>
-
+              color="black" position="0 0.4 -9.3" radius="1"></a-sphere>
     <a-sphere id="target200"
               raycaster-target="canGrab: false;"
               physx-body="type: static;"
               color="green" position="0 2.6 -11.5" radius="0.4"></a-sphere>
-
     <a-sphere id="target300"
               raycaster-target="canGrab: false;"
               physx-body="type:aw static;"
               color="blue" position="0 4.2 -13" radius="0.4"></a-sphere>
-
     <a-sphere id="target500"
               raycaster-target="canGrab: false;"
               physx-body="type:aw static;"
               color="orange" position="0 6.3 -15.2" radius="0.4"></a-sphere>
-
     <a-sphere id="target1001"
               raycaster-target="canGrab: false;"
               physx-body="type:aw static;"
               color="red" position="-3 6.3 -15.2" radius="0.4"></a-sphere>
-
-
     <a-sphere id="target1002"
               raycaster-target="canGrab: false;"
               physx-body="type:aw static;"
@@ -322,19 +315,6 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
               radius="0.3"
               material="src:#ball; color:green;">
     </a-sphere>
-
-    <!--    <a-sphere physx-body="type: dynamic;" physx-material="restitution: 0.8;"-->
-    <!--              raycaster-target="canGrab: true;"-->
-    <!--              physics-grab-->
-    <!--              position="2 6 -12"-->
-    <!--              radius="0.3w"-->
-    <!--              material="src:#ball; color:blue;">-->
-    <!--    </a-sphere>-->
-    <!--    -->
-
-
-    <!-- kinematic boxes -->
-
 
 </a-scene>
 

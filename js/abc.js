@@ -57,6 +57,7 @@ AFRAME.registerComponent('tostart', {
     }
 });
 
+//naar vraag1
 AFRAME.registerComponent('to1', {
     init: function () {
         let current = document.querySelectorAll(".start");
@@ -77,6 +78,72 @@ AFRAME.registerComponent('to1', {
     }
 });
 
+
+AFRAME.registerComponent('1a', {
+    init: function () {
+        let current = document.querySelectorAll(".scene11");
+        let next = document.querySelectorAll(".scene1a");
+        let sphereloader = () => {
+            //set vraag 1a
+            sky.setAttribute("src", "#bordeauxtheater");
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            loadingInintro()
+        }
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+AFRAME.registerComponent('1b', {
+    init: function () {
+        let current = document.querySelectorAll(".scene11");
+        let next = document.querySelectorAll(".scene1b");
+        let sphereloader = () => {
+            //set vraag 1a
+            sky.setAttribute("src", "#bordeauxtheater");
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            loadingInintro()
+        }
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+AFRAME.registerComponent('1c', {
+    init: function () {
+        let current = document.querySelectorAll(".scene11");
+        let next = document.querySelectorAll(".scene1c");
+        let sphereloader = () => {
+            //set vraag 1a
+            sky.setAttribute("src", "#bordeauxtheater");
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            loadingInintro()
+        }
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+
+
 AFRAME.registerComponent('playvid', {
 
     init: function () {
@@ -89,5 +156,6 @@ AFRAME.registerComponent('playvid', {
         this.el.addEventListener('click', sphereloader);
     }
 });
+
 //function for removing elements
 

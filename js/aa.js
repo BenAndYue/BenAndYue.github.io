@@ -77,20 +77,15 @@ function collision(obj1, obj2) {
     let x1 = obj1.object3D.position.x;
     let z1 = obj1.object3D.position.z;
     let y1 = obj1.object3D.position.y;
-
     let x2 = obj2.object3D.position.x;
     let z2 = obj2.object3D.position.z;
     let y2 = obj2.object3D.position.y;
-
 
     const distance = Math.sqrt(
         (x1 - x2) * (x1 - x2) +
         (y1 - y2) * (y1 - y2) +
         (z1 - z2) * (z1 - z2)
     );
-
-    //radius
-    // console.log(distance)\
 
     return distance < 1.1;
 }
@@ -118,6 +113,17 @@ function collision2(obj1, obj2) {
 
     return distance < 0.7;
 }
+
+AFRAME.registerComponent('reset', {
+
+    init: function () {
+        let sphereloader = () => {
+
+       console.log("hallo")
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
 
 
 
