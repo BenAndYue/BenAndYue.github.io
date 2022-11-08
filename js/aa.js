@@ -2,8 +2,7 @@
 
 let j = 0;
 let box, projectile, z = 0, dz = -0.1;
-let points = localStorage.getItem("points");
-
+let points = 0;
 
 
 window.onload = function () {
@@ -30,6 +29,11 @@ window.onload = function () {
 
     //floor
     floor = document.getElementById("floor")
+    check = true;
+    if (check) {
+        points = localStorage.getItem(points)
+        check = false
+    }
     loop()
 }
 
@@ -37,17 +41,17 @@ function loop() {
     setTimeout(loop, 100)
 
     //100 punten
-    if (collision(target100, ball) ) {
+    if (collision(target100, ball)) {
         console.log("DONE")
         ball.remove()
         score.setAttribute("value", points + 100 + " punten")
     }
-    if (collision(target100, ball2) ) {
+    if (collision(target100, ball2)) {
         console.log("DONE")
         ball2.remove()
         score.setAttribute("value", points + 100 + " punten")
     }
-    if (collision(target100, ball3) ) {
+    if (collision(target100, ball3)) {
         console.log("DONE")
         ball3.remove()
         score.setAttribute("value", points + 100 + " punten")
@@ -134,14 +138,13 @@ function loop() {
         score.setAttribute("value", points + 1000 + " punten")
     }
 
-    if (collision(out, elite) ) {
-    //save punten
+    if (collision(out, elite)) {
+        //save punten
         localStorage.setItem("points", points);
-        window.reload()
+        window.location.reload(true);
     }
 
 }
-
 
 
 //method to check if target hits x
@@ -162,7 +165,6 @@ function collision(obj1, obj2) {
     );
     return distance < 1.28;
 }
-
 
 
 function collision2(obj1, obj2) {
