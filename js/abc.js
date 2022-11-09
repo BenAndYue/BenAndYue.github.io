@@ -12,7 +12,7 @@ AFRAME.registerComponent('sphereexpand', {
 
         let sphereloader = () => {
             sky.setAttribute("src", "#bordeauxtheater");
-
+            console.log("test")
             homeworldelements.forEach((homeworldelement) => {
                 homeworldelement.setAttribute("visible", false)
             })
@@ -122,60 +122,14 @@ AFRAME.registerComponent('1b', {
 AFRAME.registerComponent('1c', {
     init: function () {
         let current = document.querySelectorAll(".scene11");
-        let next = document.querySelectorAll(".scene1c");
+        let next = document.querySelectorAll(".scene22");
         let sphereloader = () => {
-            //set vraag 1a
-            // sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
-                // currentelement.setAttribute("visible", false);
-                var secondCameraEl = document.getElementById("second-camera");
-                console.log(secondCameraEl)
-                secondCameraEl.setAttribute('camera', 'active', true);
-                document.querySelector("#cameraWrapper").object3D.position.set(1, 1, 1);
-
+                currentelement.setAttribute("visible", false)
             })
 
-
-            // loadingInintro()
-        }
-        let loadingInintro = () => {
-            next.forEach((nextelement) => {
-                nextelement.setAttribute('visible', true)
-            })
-        }
-        this.el.addEventListener('click', sphereloader);
-    }
-});
-
-
-AFRAME.registerComponent('playvid', {
-
-    init: function () {
-        let sphereloader = () => {
-            window.addEventListener('click', function () {
-                document.querySelector('#test360').play();
-
-
-            });
-
-        }
-        this.el.addEventListener('click', sphereloader);
-    }
-});
-
-
-AFRAME.registerComponent('twoCorrectAfterScene', {
-    init: function () {
-        let current = document.querySelectorAll(".scene11");
-        let next = document.querySelectorAll(".scene1b");
-        let sphereloader = () => {
-            //TODO
-            current.forEach((currentelement) => {
-                // currentelement.setAttribute("visible", false);
-                var secondCameraEl = document.getElementById("third-camera");
-                console.log(secondCameraEl)
-                secondCameraEl.setAttribute('camera', 'active', true);
-            })
+            var scene1 = document.getElementById("deleteT")
+            scene1.remove()
             loadingInintro()
         }
         let loadingInintro = () => {
@@ -187,19 +141,41 @@ AFRAME.registerComponent('twoCorrectAfterScene', {
     }
 });
 
-AFRAME.registerComponent('tot', {
+AFRAME.registerComponent('cons', {
     init: function () {
-
+        let current = document.querySelectorAll(".scene22");
+        let next = document.querySelectorAll(".scene23");
         let sphereloader = () => {
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            loadingInintro()
+        }
 
-
-            const camera = document.querySelector("#cameraWrapper")
-            camera.setAttribute('position', '10 10 10')
-
-            // loadingInintro()
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
         }
 
 
         this.el.addEventListener('click', sphereloader);
     }
 });
+
+
+AFRAME.registerComponent('playvid', {
+
+    init: function () {
+        let sphereloader = () => {
+            window.addEventListener('click', function () {
+                document.querySelector('#test360').play();
+            });
+
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+
+
