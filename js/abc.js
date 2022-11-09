@@ -12,7 +12,7 @@ AFRAME.registerComponent('sphereexpand', {
 
         let sphereloader = () => {
             sky.setAttribute("src", "#bordeauxtheater");
-
+            console.log("test")
             homeworldelements.forEach((homeworldelement) => {
                 homeworldelement.setAttribute("visible", false)
             })
@@ -122,24 +122,43 @@ AFRAME.registerComponent('1b', {
 AFRAME.registerComponent('1c', {
     init: function () {
         let current = document.querySelectorAll(".scene11");
-        let next = document.querySelectorAll(".scene1c");
+        let next = document.querySelectorAll(".scene22");
         let sphereloader = () => {
-            //set vraag 1a
-            // sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
-                // currentelement.setAttribute("visible", false);
-
-
+                currentelement.setAttribute("visible", false)
             })
 
-
-            // loadingInintro()
+            var scene1 = document.getElementById("deleteT")
+            scene1.remove()
+            loadingInintro()
         }
         let loadingInintro = () => {
             next.forEach((nextelement) => {
                 nextelement.setAttribute('visible', true)
             })
         }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+AFRAME.registerComponent('cons', {
+    init: function () {
+        let current = document.querySelectorAll(".scene22");
+        let next = document.querySelectorAll(".scene23");
+        let sphereloader = () => {
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            loadingInintro()
+        }
+
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+
+
         this.el.addEventListener('click', sphereloader);
     }
 });
@@ -151,8 +170,6 @@ AFRAME.registerComponent('playvid', {
         let sphereloader = () => {
             window.addEventListener('click', function () {
                 document.querySelector('#test360').play();
-
-
             });
 
         }
@@ -162,19 +179,3 @@ AFRAME.registerComponent('playvid', {
 
 
 
-AFRAME.registerComponent('tot', {
-    init: function () {
-
-        let sphereloader = () => {
-
-
-            const camera = document.querySelector("#cameraWrapper")
-            camera.setAttribute('position', '10 10 10')
-
-            // loadingInintro()
-        }
-
-
-        this.el.addEventListener('click', sphereloader);
-    }
-});
