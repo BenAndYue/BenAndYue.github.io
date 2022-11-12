@@ -1,5 +1,3 @@
-<!--disco ball
-https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dlUce&index=7-->
 <!DOCTYPE html>
 <html>
 
@@ -45,8 +43,9 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
               animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 500; loop: true; elasticity: 0"
     ></a-sphere>
 
-    <!--Setting up player-->
+    <!--    Information text8-->
 
+    <!--Setting up player-->
     <a-entity
             id="player"
             position="0 9 3"
@@ -78,7 +77,6 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
 
     </a-entity>
     <!-- Floor -->
-
     <a-box physx-body="type: static;"
            class="environmentGround"
            position="0 7.5 0"
@@ -129,11 +127,6 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            material="src:  repeat: 5 1;">
     </a-box>
 
-    <!-- Ramp -->
-<!--    <a-box physx-body="type: static" depth="5" width="5" position="0 1 -10" rotation="45.00001012537989 0 0"-->
-<!--           material="color: #88sa8888; repeat: 5 1" geometry="depth: 6.57; height: 0.12"-->
-<!--           grab-options="scalable" scale="1.7600000000000027 2.0715326758746153 2.8120107836787227"-->
-    >
     </a-box>
     <a-box physx-body="type: static;"
            id="floor"
@@ -161,7 +154,7 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            position="0.14087000489234924 2.7098300457000732 -16.790000915527344" color="#BBBBBB"
            raycaster-target="glowOnHover: false"
            material="emissive: #000000; alphaTest: 0.52; opacity: 0.65; height: 256.11; metalness: 1"
-           geometry="depth: 4.3; height: 3"  grab-options="scalable"
+           geometry="depth: 4.3; height: 3" grab-options="scalable"
            class="raycaster-target" rotation="4.7374910974259624e-14 90.00000769819569 -2.9620501585917803e-22"
            scale="-2.649336707906037 9.19001 5.248793240430247">
     </a-box>
@@ -248,7 +241,7 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
            scale="0.999996591014998 0.9999978568047527 0.999994753742057">
     </a-box>
 
-    <!--    nummers voor punten-->
+    <!--    nummers for points-->
     <a-text value="100" position="5.2 9 -9.14679" color="black"
             text="width: 14.59; alphaTest: 1; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
     <a-text value="200" position="5.2 10 -9.14679" color="green"
@@ -298,15 +291,18 @@ https://www.youtube.com/watch?v=WmMTovnsml0&list=PLWkWuhMLkR7D_VSEMkj45NIgF8i2dl
               radius="0.3"
               color="black">
     </a-sphere>
-
     <a-sphere id="targetOut"
               physx-body="type: dynamic;"
               raycaster-target="canGrab: false;"
               position="-4 9 -2"
               radius="0.3"
-              color="rood">></a-sphere>
+              color="rood">>
+    </a-sphere>
+    s
 
-
+    <a-text rotation="0 90 0" position="-5 11 4" value="Goal of the game: "></a-text>
+    <a-text rotation="0 90 0" position="-5 10 4"
+            value="Throw the 3 purple balls in the buckets to get points. If you get a ball in a basket then your points will be updated. Try to score as high as you can to be the best. If you have thrown the ball 3 times and there are no balls left then restart the application to reset the balls."></a-text>
 
     <!--target-->
     <a-sphere id="target100"

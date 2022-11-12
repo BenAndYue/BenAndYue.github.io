@@ -15,12 +15,10 @@ window.onload = function () {
     ball = document.getElementById("ballp")
     ball2 = document.getElementById("ballp2")
     ball3 = document.getElementById("ballp3")
-    elite = document.getElementById("elite")
-    out = document.getElementById('targetOut')
 
 
     //targets
-    target100 = document.getElementById("target100")
+    target100 = document.getEslementById("target100")
     target200 = document.getElementById("target200")
     target300 = document.getElementById("target300")
     target500 = document.getElementById("target500")
@@ -138,11 +136,7 @@ function loop() {
         score.setAttribute("value", points + 1000 + " punten")
     }
 
-    if (collision(out, elite)) {
-        //save punten
-        localStorage.setItem("points", points);
-        window.location.reload(true);
-    }
+
 
 }
 
