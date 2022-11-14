@@ -5,32 +5,37 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="js/abc.js"></script>
     <script src="js/scene1.js"></script>
+    <script src="js/scene2.js"></script>
 </head>
 
 <body>
 
 <a-scene>
 
-    <a-assets timeout="5000">
+    <a-assets timeout="1000">
         <img crossOrigin="anonymous" id="starsky"
              src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2Fstarry%20night.jpg?1547158907338">
         <img crossOrigin="anonymous" id="bordeauxtheater"
              src="assets/background.jpg">
         <video id="opening" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="opening2" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene1a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene1b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene1c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene2a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene2b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene2c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene3a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene3b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+        <video id="scene3c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>
+
     </a-assets>
 
-<!--    <a-entity id="camera" position="0 1.6 1" camera look-controls wasd-controls>-->
-<!--        <a-entity cursor="rayOrigin: mouse"></a-entity>-->
-<!--    </a-entity>-->
-
     <a-entity id="R" laser-controls="hand:right"></a-entity>
-
     <a-sky id="sky" src="#starsky"></a-sky>
     <!--home-->
     <a-entity id="architecture" class="homeworld">
         <a-box width="12" color="white" position="0 10 -2" depth="1" tot></a-box>
-
-
         <!--        ground-->
         <a-box width="12" color="black" position="0 -1 4" depth="12"></a-box>
         <a-box width="0.1" color="white" position="6 -1 4" depth="12"></a-box>
@@ -71,7 +76,6 @@
 
     <!--     intro -->
     <a-entity id="startButton2" class="intro" visible="false">
-
         <a-text
                 value="Lars is een jongen van 25 jaar met een licht verstandelijke beperking en epilepsie. Voor zijn epilepsie heeft hij een goed ingestelde anti-epileptica. Lars woont op zichzelf en wordt hierbij begeleid door Vanessa. Zij is begeleider van de zorginstelling die Lars hulp biedt, zodat hij zelfstandig kan wonen. Lars heeft jaren geen epileptische aanval gehad, maar onlangs heeft hij voor de tweede keer in drie maanden een aanval gehad. De moeder van Lars is erg bezorg, omdat hij de laatste keer gevallen is en vraagt zich af of hij niet meer zorg nodig heeft. Lars is door middel van een verwijzing bij ergotherapie terechtgekomen, waar een vraagverhelderend gesprek zal plaatsvinden."
                 position="-10 6.5 -14" color="aqua"
@@ -88,9 +92,22 @@
 
     </a-entity>
 
+    <!--start1/opening DONE-->
+    <a-entity id="sceneoop1" class="opening" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 4"
+                rotation="0 -110 -90"
+                toop2
+        ></a-box>
+    </a-entity>
 
-    <!--start/opening-->
-    <a-entity class="start" visible="false">
+    <!--start2/opening-->
+    <a-entity class="opening2" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
                 position="7 2.6 5" rotation="0 -110 0"
                 color="aqua"
@@ -103,123 +120,211 @@
         ></a-triangle>
     </a-entity>
 
+
+    <!--VRAAG 1-->
     <!--    Vraag 1: -->
-    <a-entity id="deleteT" class="scene11" visible="false">
+    <a-entity id="vraag1" class="scene1" visible="false">
         <a-text value="1 Welke vraag stel je als eerst na binnenkomst zodra je jezelf hebt voorgesteld?"
                 position="13 5 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-text value="A Hoe gaat het met je?"
-                position="13 3 -5" rotation="0 -90 0"
+                position="13 3 -3" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13 3 -5" color="white" 1a></a-box>
         <a-text value="B Wat is er gebeurd?"
-                position="13 1 -5" rotation="0 -90 0"
+                position="13 1 -3" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13 1 -5" color="white" 1b></a-box>
         <a-text value="C Hoe was je weekend?"
-                position="13 -1 -5" rotation="0 -90 0"
+                position="13 -1 -3" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13 -1 -5" color="white" 1c></a-box>
-        <a-triangle
-                color="red"
-                position="5.825 1.5 -5.99"
-                rotation="0 -45 -90"
-        ></a-triangle>
+
     </a-entity>
 
-    <!--vid 1a naar vraag 2-->
-    <a-entity class="scene1a" visible="false">
-        <a-triangle
-                color="red"
-                position="5.825 2 -5.99"
-                rotation="0 -45 -90"
-        ></a-triangle>
-    </a-entity>
-
-    <a-entity class="scene1aq" visible="false">
-        <a-text value="1 Welke vraag stel je als eerst na binnenkomst zodra je jezelf hebt voorgesteld?"
-                position="13 5 -5" rotation="0 -90 0"
-                color="aqua"
+    <!--1A-->
+    <a-entity id="1aq" class="scene1a" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                1aq
+        ></a-box>
     </a-entity>
 
+    <a-entity id="1aqn" class="scene1aq" visible="false">
+        <a-text value="Dit is het juiste antwoord. Dit is een makkelijke vraag voor Lars en kan zo beantwoord worden. Hierbij laat je Lars wennen aan de situatie en jou als ergotherapeut. "
+                position="13 5 -5" rotation="0 -90 0"
+                color="Green"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="green"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                1aqn
+        ></a-box>
+    </a-entity>
 
-    <!--vid 1b opnieuw-->
+    <!--1B-->
     <a-entity class="scene1b" visible="false">
-
-        <a-triangle
-                color="red"
-                position="5.825 3 -5.99"
-                rotation="0 -45 -90"
-        ></a-triangle>
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                1bq
+        ></a-box>
     </a-entity>
 
     <a-entity class="scene1bq" visible="false">
-        <a-text value="1 Welke vraag stel je als eerst na binnenkomst zodra je jezelf hebt voorgesteld?"
+        <a-text value="Dit is niet het juiste antwoord. Je hebt Lars nog niet eerder gezien en je gaat hier direct vragen naar het probleem van de cliënt. Doordat Lars een licht verstandelijke beperking heeft, zal hij niet begrijpen wat je bedoelt als je begint met deze vraag. Laat de Lars eerst wennen aan jou als ergotherapeut.   "
                 position="13 5 -5" rotation="0 -90 0"
-                color="aqua"
+                color="red"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+
+        <a-text value="Probeer maar opnieuw"
+                position="13 0 -5" rotation="0 -90 0"
+                color="white"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="red"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                1bqn
+        ></a-box>
     </a-entity>
 
-    <!--vid 1c naar vraag 2 -->
-    <a-entity class="scene1c" visible="false">
-
-        <a-triangle
-                color="red"
-                position="5.825 4 -5.99"
-                rotation="0 -45 -90"
+    <!--1C-->
+    <a-entity id="1cq" class="scene1c" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                1cq
+        ></a-box>
         ></a-triangle>
     </a-entity>
 
-    <a-entity class="scene1cq" visible="false">
-        <a-text value="1 Welke vraag stel je als eerst na binnenkomst zodra je jezelf hebt voorgesteld?"
+    <a-entity id="1cqn" class="scene1cq" visible="false">
+        <a-text value="Dit is niet het juiste antwoord. Je hebt Lars nog niet eerder gezien, waardoor je hem nog niet kent. Dit kan voor mensen (met een licht verstandelijke beperking) vervelend overkomen, omdat dit niet netjes is in de situatie. Daarnaast komt dit niet professioneel over "
                 position="13 5 -5" rotation="0 -90 0"
-                color="aqua"
+                color="red"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-    </a-entity>
 
+        <a-text value="Probeer maar opnieuw"
+                position="13 0 -5" rotation="0 -90 0"
+                color="white"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="red"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                1cqn
+        ></a-box>
+    </a-entity>
+<!--//////////////////////////////////////////////////////////-->
     <!--    Vraag 2: -->
-    <a-entity  class="scene22" visible="false">
-        <a-text value="1 dit is 2"
+    <a-entity id="vraag2" class="scene2" visible="false">
+        <a-text value="Wat is het doel van het vraagverhelderend gesprek?"
                 position="13.01 5 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-text value="A Hoe gaat het met je?"
+        <a-text value="A Het doel van het vraagverhelderend gesprek is om kennis te maken met Lars."
                 position="13.01 3 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13.1 3 -5" color="white" 2a></a-box>
-        <a-text value="B Wat is er gebeurd?"
+        <a-text value="B Het doel van het vraagverhelderend gesprek is om de handelingsvraag te achterhalen komen en deze zonder Lars oplossen. "
                 position="13.01 1 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13 1 -5" color="white" 2b></a-box>
-        <a-text value="C 2?"
-                position="130.1 -1 -5" rotation="0 -90 0"
+        <a-text value="C Het doel van het vraagverhelderend gesprek is om de handelingsvraag te achterhalen. Dus ik zou er samen met jou achter willen komen waar jij behoefte aan hebt en waar je tegen aanloopt.?"
+                position="13.1 -2 -5" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13.01 -1 -5" color="white"  cons></a-box>
-    </a-entity>
-
-    <a-entity  class="scene23" visible="false">
-        <a-text value="3 deze is 3"
-                position="13.01 5 -5" rotation="0 -90 0"
-                color="aqua"
-                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box position="13.01 -2 -5" color="white" 2c></a-box>
     </a-entity>
 
 
-    <!--vid 2a-->
+    <!--2A-->
+    <a-entity id="2aq" class="scene2a" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                2aq
+        ></a-box>
+    </a-entity>
 
-    <!--vid 2b-->
+    <a-entity id="2aqn" class="scene2aq" visible="false">
+        <a-text value="Dit is niet het doel van dit gesprek. Kennismaking is echt gericht op het leren kennen van de patiënt. Tijdens een vraagverhelderend gesprek maak je wel kennis met Lars, maar hierbij ben je ook bezig om de handelingsvraag te achterhalen. "
+                position="13 5 -5" rotation="0 -90 0"
+                color="red"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="red"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                2aqn
+        ></a-box>
+        <a-text value="Probeer maar opnieuw"
+                position="13 0 -5" rotation="0 -90 0"
+                color="white"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+    </a-entity>
 
-    <!--vid 3c-->
+    <!--2B-->
 
-    <!--    cameras-->
+    <!--2C-->
+    <a-entity id="2cq" class="scene2c" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                2cq
+        ></a-box>
+    </a-entity>
+    <a-entity id="2cqn" class="scene2cq" visible="false">
+        <a-text value="Dit is niet het doel van dit gesprek. Kennismaking is echt gericht op het leren kennen van de patiënt. Tijdens een vraagverhelderend gesprek maak je wel kennis met Lars, maar hierbij ben je ook bezig om de handelingsvraag te achterhalen. "
+                position="13 5 -5" rotation="0 -90 0"
+                color="red"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="red"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                2cqn
+        ></a-box>
+        <a-text value="Probeer maar opnieuw"
+                position="13 0 -5" rotation="0 -90 0"
+                color="white"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+    </a-entity>
+
 
 </a-scene>
 
