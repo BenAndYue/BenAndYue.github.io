@@ -6,7 +6,6 @@ let points = 0;
 
 
 window.onload = function () {
-    //hud
 
     score = document.getElementById("score")
 
@@ -178,9 +177,7 @@ function collision2(obj1, obj2) {
         (y1 - y2) * (y1 - y2) +
         (z1 - z2) * (z1 - z2)
     );
-
     //radius
-    // console.log(distance)\
 
     return distance < 0.7;
 }

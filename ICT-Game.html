@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Throwing ball minigame</title>
@@ -10,11 +10,11 @@
     <script src="js/raycaster-extras.js"></script>
     <script src="js/physx.release.js"></script>
     <script src="js/physics.js"></script>
-    <script src="js/aa.js"></script>
+    <script src="js/gameICTscript.js"></script>
 </head>
 <body>
 <script>
-    <!--grabbing item-->
+    <!--Het pakken van items methode-->
     AFRAME.registerComponent("physics-grab", {
         init: function () {
             let self = this;
@@ -35,17 +35,15 @@
          physx="autoLoad: true; delay: 1000; wasmUrl: js/physx.release.wasm; useDefaultScene: false;">
 
     <a-assets>
-        <img crossOrigin="anonymous" id="bordeauxtheater"
+        <img crossOrigin="anonymous" id="texture1"
              src="assets/spin.jpg">
     </a-assets>
-    <!--    discoball    -->
-    <a-sphere position="0 9 -13" radius=".7" src="#bordeauxtheater" sphereexpand
+    <!--    discoball + animatie object   -->
+    <a-sphere position="0 9 -13" radius=".7" src="#texture1" sphereexpand
               animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 500; loop: true; elasticity: 0"
     ></a-sphere>
 
-    <!--    Information text8-->
-
-    <!--Setting up player-->
+    <!--Setting up van de camera + joysticks-->
     <a-entity
             id="player"
             position="0 9 3"
@@ -76,7 +74,8 @@
         </a-entity>
 
     </a-entity>
-    <!-- Floor -->
+
+    <!-- Harde Vloer -->
     <a-box physx-body="type: static;"
            class="environmentGround"
            position="0 7.5 0"
@@ -110,7 +109,7 @@
            shadow="receive: true;">
     </a-box>
 
-    <!-- Walls -->
+    <!-- Muren rondom de speler-->
     <a-box physx-body="type: static;"
            position="0 8 5"
            width="20" depth="0.1" height="1"
@@ -137,7 +136,7 @@
            material="src: #floor; repeat: 1;"
            shadow="receive: true;">
     </a-box>
-    <!--    Backboard-->
+    <!--    Backboard waar de user de ball gaat gooien-->
     <a-entity physx-body="type: static;" material="emissive: #000000; alphaTest: 0.52; opacity: 1; "
               physx-body="type: kinematic; emitCollisionEvents: true"
               geometry="primitive: box; width: 5.2; height: 30; depth: 1" position="-7 0 -10"></a-entity>
@@ -159,7 +158,7 @@
            scale="-2.649336707906037 9.19001 5.248793240430247">
     </a-box>
 
-    <!--    100-->
+    <!--    100 -->
     <a-box physx-body="type: static" width="0.1" depth="9" height="1"
            position="3 1.3600000143051147 -10.149999618530273" color="black"
            rotation="40.140001497313435 -59.1199992356085 -10.460000546794111" material="color: #ae00ff; opacity: 0.46"
@@ -257,7 +256,7 @@
     <a-text id="score" value="0 points" position="-6.98732 13 -9.14679" color="aqua"
             text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; xOffset: -1.08"></a-text>
 
-    <!--    ball-->
+    <!--    ballp = ballprimary-->
     <a-sphere id="ballp"
               physx-body="type: dynamic;"
               raycaster-target="canGrab: true;"
@@ -283,7 +282,7 @@
               color="violet">
     </a-sphere>
 
-    <a-sphere id="elite"
+    <a-sphere id="randomBall"
               physx-body="type: dynamic;"
               raycaster-target="canGrab: true;"
               physics-grab
@@ -298,7 +297,7 @@
               radius="0.3"
               color="rood">>
     </a-sphere>
-    s
+
 
     <a-text rotation="0 90 0" position="-5 11 4" value="Goal of the game: "></a-text>
     <a-text rotation="0 90 0" position="-5 10 4"
