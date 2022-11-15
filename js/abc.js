@@ -41,9 +41,9 @@ AFRAME.registerComponent('tostart', {
             })
             loadingInintro()
 
-            window.addEventListener('click', function () {
+
                 document.querySelector('#opening').play();
-            });
+
         }
         // let element = document.getElementById('pac');
         // element.remove();
@@ -65,14 +65,17 @@ AFRAME.registerComponent('toop2', {
         let sphereloader = () => {
             console.log("O 1->2")
             //TODO video
-            sky.setAttribute("src", "#opening");
+            sky.setAttribute("src", "#opening2");
             current.forEach((currentelement) => {
                 currentelement.setAttribute("visible", false)
             })
+
             loadingInintro()
-            window.addEventListener('click', function () {
-                document.querySelector('#opening').play();
-            });
+
+                document.querySelector('#opening2').play();
+
+
+
             let element = document.getElementById('sceneoop1');
             element.remove();
         }
