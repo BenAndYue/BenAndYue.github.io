@@ -73,6 +73,78 @@ AFRAME.registerComponent('2aqn', {
 });
 
 //BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+AFRAME.registerComponent('2b', {
+    init: function () {
+        let current = document.querySelectorAll(".scene2");
+        let next = document.querySelectorAll(".scene2b");
+        let sphereloader = () => {
+            console.log("2b")
+
+            //TODO video
+            sky.setAttribute("src", "#scene2b");
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            // let element = document.getElementById('vraag1');
+            // element.remove();
+            loadingInintro()
+
+            window.addEventListener('click', function () {
+                //TODO video
+                document.querySelector('#scene2b').play();
+            });
+
+        }
+        //removing current scene
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+AFRAME.registerComponent('2bq', {
+    init: function () {
+        let current = document.querySelectorAll(".scene2b");
+        let next = document.querySelectorAll(".scene2bq");
+        let sphereloader = () => {
+            sky.setAttribute("src", "#bordeauxtheater");
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+
+            loadingInintro();
+        }
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
+
+AFRAME.registerComponent('2bqn', {
+    init: function () {
+        let current = document.querySelectorAll(".scene2bq");
+        let next = document.querySelectorAll(".scene2");
+        let sphereloader = () => {
+            sky.setAttribute("src", "#bordeauxtheater");
+            current.forEach((currentelement) => {
+                currentelement.setAttribute("visible", false)
+            })
+            loadingInintro()
+        }
+        let loadingInintro = () => {
+            next.forEach((nextelement) => {
+                nextelement.setAttribute('visible', true)
+            })
+        }
+        this.el.addEventListener('click', sphereloader);
+    }
+});
 
 //CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 AFRAME.registerComponent('2c', {
@@ -131,7 +203,7 @@ AFRAME.registerComponent('2cq', {
 AFRAME.registerComponent('2cqn', {
     init: function () {
         let current = document.querySelectorAll(".scene2cq");
-        let next = document.querySelectorAll(".scene2");
+        let next = document.querySelectorAll(".scene3");
         let sphereloader = () => {
             sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
@@ -155,8 +227,3 @@ AFRAME.registerComponent('2cqn', {
 
 
 
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
-//BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-
-//CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC

@@ -35,7 +35,6 @@
     <a-sky id="sky" src="#starsky"></a-sky>
     <!--home-->
     <a-entity id="architecture" class="homeworld">
-        <a-box width="12" color="white" position="0 10 -2" depth="1" tot></a-box>
         <!--        ground-->
         <a-box width="12" color="black" position="0 -1 4" depth="12"></a-box>
         <a-box width="0.1" color="white" position="6 -1 4" depth="12"></a-box>
@@ -237,7 +236,8 @@
                 1cqn
         ></a-box>
     </a-entity>
-<!--//////////////////////////////////////////////////////////-->
+
+    <!--//////////////////////////////////////////////////////////-->
     <!--    Vraag 2: -->
     <a-entity id="vraag2" class="scene2" visible="false">
         <a-text value="Wat is het doel van het vraagverhelderend gesprek?"
@@ -245,22 +245,21 @@
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-text value="A Het doel van het vraagverhelderend gesprek is om kennis te maken met Lars."
-                position="13.01 3 -5" rotation="0 -90 0"
+                position="13.01 3 -3" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13.1 3 -5" color="white" 2a></a-box>
         <a-text value="B Het doel van het vraagverhelderend gesprek is om de handelingsvraag te achterhalen komen en deze zonder Lars oplossen. "
-                position="13.01 1 -5" rotation="0 -90 0"
+                position="13.01 1 -3" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13 1 -5" color="white" 2b></a-box>
         <a-text value="C Het doel van het vraagverhelderend gesprek is om de handelingsvraag te achterhalen. Dus ik zou er samen met jou achter willen komen waar jij behoefte aan hebt en waar je tegen aanloopt.?"
-                position="13.1 -2 -5" rotation="0 -90 0"
+                position="13.1 -2 -3" rotation="0 -90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box position="13.01 -2 -5" color="white" 2c></a-box>
     </a-entity>
-
 
     <!--2A-->
     <a-entity id="2aq" class="scene2a" visible="false">
@@ -294,6 +293,35 @@
     </a-entity>
 
     <!--2B-->
+    <a-entity id="2bq" class="scene2b" visible="false">
+        <a-text value="Druk op knop als de video voorbij is"
+                position="7 2.6 3" rotation="0 -110 0"
+                color="pink"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="black"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                2bq
+        ></a-box>
+    </a-entity>
+
+    <a-entity id="2bqn" class="scene2bq" visible="false">
+        <a-text value="Dit antwoord is deels goed. Het doel is om de handelingsvraag te achterhalen, maar dit doe je samen met Lars en niet alleen. "
+                position="13 5 -5" rotation="0 -90 0"
+                color="red"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <a-box
+                color="red"
+                position="7 1 5"
+                rotation="0 -110 -90"
+                2bqn
+        ></a-box>
+        <a-text value="Probeer maar opnieuw"
+                position="13 0 -5" rotation="0 -90 0"
+                color="white"
+                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+    </a-entity>
 
     <!--2C-->
     <a-entity id="2cq" class="scene2c" visible="false">
@@ -308,20 +336,48 @@
                 2cq
         ></a-box>
     </a-entity>
+
     <a-entity id="2cqn" class="scene2cq" visible="false">
-        <a-text value="Dit is niet het doel van dit gesprek. Kennismaking is echt gericht op het leren kennen van de patiënt. Tijdens een vraagverhelderend gesprek maak je wel kennis met Lars, maar hierbij ben je ook bezig om de handelingsvraag te achterhalen. "
+        <a-text value="Dit antwoord is juist. Door samen te werken betrek je Lars goed bij het proces, ook al heeft hij een licht verstandelijke beperking. Daarnaast leg je het ook nog uit in makkelijke taal. Hierdoor neem je Lars zijn licht verstandelijke beperking mee in het proces. "
                 position="13 5 -5" rotation="0 -90 0"
-                color="red"
+                color="green"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="red"
+                color="green"
                 position="7 1 5"
                 rotation="0 -110 -90"
                 2cqn
         ></a-box>
-        <a-text value="Probeer maar opnieuw"
-                position="13 0 -5" rotation="0 -90 0"
-                color="white"
+
+    </a-entity>
+
+    <!--//////////////////////////////////////////////////////////-->
+    <!--    Vraag 3: -->
+    <!--    <a-entity id="vraag3" class="scene3" visible="false">-->
+    <!--        <a-text value="Je merkt dat hij afgeleid is, hij kijkt om zich heen en heeft minder aandacht voor het gesprek. Hoe pak je dit aan? "-->
+    <!--                position="13.01 6 -5" rotation="0 -90 0"-->
+    <!--                color="aqua"-->
+    <!--                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>-->
+    <!--        <a-text value="A Je spreekt hem hier streng op aan dat hij wel mee moet werken"-->
+    <!--                position="13.01 3 -3" rotation="0 -90 0"-->
+    <!--                color="aqua"-->
+    <!--                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>-->
+    <!--        <a-box position="13.1 3 -5" color="white" 2a></a-box>-->
+    <!--        <a-text value="B Je bespreekt dat je merkt dat hij afgeleid is en vraagt wat er aan de hand is "-->
+    <!--                position="13.01 1 -3" rotation="0 -90 0"-->
+    <!--                color="aqua"-->
+    <!--                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>-->
+    <!--        <a-box position="13 1 -5" color="white" 2b></a-box>-->
+    <!--        <a-text value="C Je negeert het en gaat verder met het gesprek"-->
+    <!--                position="13.1 -1 -3" rotation="0 -90 0"-->
+    <!--                color="aqua"-->
+    <!--                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>-->
+    <!--        <a-box position="13.01 -1 -5" color="white" 2c></a-box>-->
+    <!--    </a-entity>-->
+    <a-entity id="vraag3" class="scene3" visible="false">
+        <a-text value="bedankt voor het testen van de demo :) "
+                position="13.01 6 -5" rotation="0 -90 0"
+                color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
     </a-entity>
 
