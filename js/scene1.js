@@ -16,8 +16,6 @@ AFRAME.registerComponent('1a', {
             loadingInintro()
 
             document.querySelector('#scene1a').play();
-
-
         }
         //removing current scene
         let loadingInintro = () => {

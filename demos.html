@@ -6,35 +6,36 @@
     <script src="js/abc.js"></script>
     <script src="js/scene1.js"></script>
     <script src="js/scene2.js"></script>
+
 </head>
 
 <body>
 
-<a-scene>
+<a-scene physics="debug: true">
 
     <a-assets timeout="1000">
         <img crossOrigin="anonymous" id="starsky"
              src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2Fstarry%20night.jpg?1547158907338">
         <img crossOrigin="anonymous" id="bordeauxtheater"
              src="assets/background.jpg">
-<!--        Test-->
-<!--        <video id="opening" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="opening2" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene1a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene1b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene1c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene2a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene2b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene2c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene3a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene3b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
-<!--        <video id="scene3c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        Test-->
+        <!--        <video id="opening" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="opening2" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene1a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene1b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene1c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene2a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene2b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene2c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene3a" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene3b" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
+        <!--        <video id="scene3c" preload="auto" src="assets/test.mp4" crossOrigin="anonymous"></video>-->
 
-<!--&lt;!&ndash;        Live versie&ndash;&gt;-->
-        <video id="opening"  loop="false" preload="auto" src="assets/opening1.mp4" crossOrigin="anonymous"></video>
+        <!--&lt;!&ndash;        Live versie&ndash;&gt;-->
+        <video id="opening" loop="false" preload="auto" src="assets/opening1.mp4" crossOrigin="anonymous"></video>
         <video id="opening2" preload="auto" src="assets/opening2.mp4" crossOrigin="anonymous"></video>
 
-        <video id="scene1a"  preload="auto" src="assets/scene-1a.mp4" crossOrigin="anonymous"></video>
+        <video id="scene1a" preload="auto" src="assets/scene-1a.mp4" crossOrigin="anonymous"></video>
         <video id="scene1b" preload="auto" src="assets/scene-1b.mp4" crossOrigin="anonymous"></video>
         <video id="scene1c" preload="auto" src="assets/scene-1c.mp4" crossOrigin="anonymous"></video>
 
@@ -77,15 +78,15 @@
 
         <a-entity
                 id="color"
-                position="0 0.7 -4.5"
-                text="color: white; align: center; value: Start door op de bol te gaan drukken; width: 1.5"
+                position="0 0.3 -4.5"
+                text="color: aqua; align: center; value: Start door op de bol te drukken; width: 1.5"
                 scale="5 5"
         >
         </a-entity>
     </a-entity>
     <a-entity id="photospheredisplay" class="homeworld" position="0 0 -5">
-        <a-box color="black" rotation="0 0 0" width="1" height="2" depth=".5"></a-box>
-        <a-sphere position="0 1.8 0" radius=".7" src="#bordeauxtheater" sphereexpand
+        <a-box color="white" rotation="0 0 0" width="0.2" height="2" depth=".2"></a-box>
+        <a-sphere position="0 1.8 0" radius="1" src="#bordeauxtheater" sphereexpand
                   animation="property: rotation; to: 0 360 0; easing: easeInOutSine; dur: 30000; loop: true; elasticity: 0"
         ></a-sphere>
     </a-entity>
@@ -99,12 +100,12 @@
         <a-text value="Je komt zo als ergotherapeut bij Lars thuis. Je hebt Lars nog niet eerder gezien en er vindt een vraagverhelderend gesprek plaats. Lars heeft een epileptische aanval gehad door het niet regelmatig innemen van zijn medicatie. Hierdoor vindt zijn moeder het niet veilig om hem zelfstandig te laten wonen en heeft een ergotherapeut ingeschakeld  "
                 position="5 6.5 -14" color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-triangle
+        <a-box
                 color="white"
                 position="4 0.621 -4"
-                rotation="0 -45 -90"
+
                 tostart
-        ></a-triangle>
+        ></a-box>
 
     </a-entity>
 
@@ -115,9 +116,9 @@
                 color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
+                color="white"
                 position="7 1 4"
-                rotation="0 -110 -90"
+
                 toop2
         ></a-box>
     </a-entity>
@@ -125,13 +126,12 @@
     <!--start2/opening-->
     <a-entity class="opening2" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 5" rotation="0 -110 0"
+                position="7 4 5" rotation="0 -110 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-triangle
                 color="white"
-                position="7 1 6"
-                rotation="0 -110 -90"
+                position="7 3 6"
                 to1
         ></a-triangle>
     </a-entity>
@@ -165,13 +165,13 @@
     <!--1A-->
     <a-entity id="1aq" class="scene1a" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 3" rotation="0 -110 0"
+                position="7 2 7" rotation="0 -110 0"
                 color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                color="white"
+                position="7 2 6"
+
                 1aq
         ></a-box>
     </a-entity>
@@ -183,8 +183,7 @@
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
                 color="green"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                position="7 2 5"
                 1aqn
         ></a-box>
     </a-entity>
@@ -192,13 +191,13 @@
     <!--1B-->
     <a-entity class="scene1b" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 3" rotation="0 -110 0"
+                position="7 2 7" rotation="0 -110 0"
                 color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                color="white"
+                position="7 1 6"
+
                 1bq
         ></a-box>
     </a-entity>
@@ -216,21 +215,21 @@
         <a-box
                 color="red"
                 position="7 1 5"
-                rotation="0 -110 -90"
+
                 1bqn
         ></a-box>
     </a-entity>
 
     <!--1C-->
     <a-entity id="1cq" class="scene1c" visible="false">
-        <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 3" rotation="0 -110 0"
-                color="pink"
-                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        <  <a-text value="Druk op knop als de video voorbij is"
+                   position="7 2 7" rotation="0 -110 0"
+                   color="pink"
+                   text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                color="white"
+                position="7 0 6"
+
                 1cq
         ></a-box>
         ></a-triangle>
@@ -248,8 +247,7 @@
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
                 color="red"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                position="7 0 5"
                 1cqn
         ></a-box>
     </a-entity>
@@ -258,53 +256,52 @@
     <!--    Vraag 2: -->
     <a-entity id="vraag2" class="scene2" visible="false">
         <a-text value="Wat is het doel van het vraagverhelderend gesprek?"
-                position="13.01 5 -5" rotation="0 -90 0"
+                position="-14 5 4" rotation="0 90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-text value="A Het doel van het vraagverhelderend gesprek is om kennis te maken met Lars."
-                position="13.01 3 -3" rotation="0 -90 0"
+                position="-14 3 4" rotation="0 90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13.1 3 -5" color="white" 2a></a-box>
+        <a-box position="-14 3 4" color="white" 2a></a-box>
         <a-text value="B Het doel van het vraagverhelderend gesprek is om de handelingsvraag te achterhalen komen en deze zonder Lars oplossen. "
-                position="13.01 1 -3" rotation="0 -90 0"
+                position="-14 1 4" rotation="0 90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13 1 -5" color="white" 2b></a-box>
+        <a-box position="-14 1 4" color="white" 2b></a-box>
         <a-text value="C Het doel van het vraagverhelderend gesprek is om de handelingsvraag te achterhalen. Dus ik zou er samen met jou achter willen komen waar jij behoefte aan hebt en waar je tegen aanloopt.?"
-                position="13.1 -2 -3" rotation="0 -90 0"
+                position="-14 -2 4" rotation="0 90 0"
                 color="aqua"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-        <a-box position="13.01 -2 -5" color="white" 2c></a-box>
+        <a-box position="-14 -2 4" color="white" 2c></a-box>
     </a-entity>
 
     <!--2A-->
     <a-entity id="2aq" class="scene2a" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 3" rotation="0 -110 0"
+                position="-10 2 -7" rotation="0 45 0"
                 color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                color="white"
+                position="-10 2 -6"
+
                 2aq
         ></a-box>
     </a-entity>
 
     <a-entity id="2aqn" class="scene2aq" visible="false">
         <a-text value="Dit is niet het doel van dit gesprek. Kennismaking is echt gericht op het leren kennen van de patiënt. Tijdens een vraagverhelderend gesprek maak je wel kennis met Lars, maar hierbij ben je ook bezig om de handelingsvraag te achterhalen. "
-                position="13 5 -5" rotation="0 -90 0"
+                position="-14 5 7" rotation="0 90 0"
                 color="red"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
                 color="red"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                position="-10 2 -5"
                 2aqn
         ></a-box>
         <a-text value="Probeer maar opnieuw"
-                position="13 0 -5" rotation="0 -90 0"
+                position="-14 0 4" rotation="0 90 0"
                 color="white"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
     </a-entity>
@@ -312,30 +309,28 @@
     <!--2B-->
     <a-entity id="2bq" class="scene2b" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 3" rotation="0 -110 0"
+                position="-10 2 -7" rotation="0 45 0"
                 color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                color="white"
+                position="-10 1 -6"
                 2bq
         ></a-box>
     </a-entity>
 
     <a-entity id="2bqn" class="scene2bq" visible="false">
         <a-text value="Dit antwoord is deels goed. Het doel is om de handelingsvraag te achterhalen, maar dit doe je samen met Lars en niet alleen. "
-                position="13 5 -5" rotation="0 -90 0"
+                position="-14 5 7" rotation="0 90 0"
                 color="red"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
                 color="red"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                position="-10 1 -5"
                 2bqn
         ></a-box>
         <a-text value="Probeer maar opnieuw"
-                position="13 0 -5" rotation="0 -90 0"
+                position="-14 0 4" rotation="0 90 0"
                 color="white"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
     </a-entity>
@@ -343,26 +338,25 @@
     <!--2C-->
     <a-entity id="2cq" class="scene2c" visible="false">
         <a-text value="Druk op knop als de video voorbij is"
-                position="7 2.6 3" rotation="0 -110 0"
+                position="-14 5 7" rotation="0 90 0"
                 color="pink"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
-                color="black"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                color="white"
+                position="-10 0 -6"
+
                 2cq
         ></a-box>
     </a-entity>
 
     <a-entity id="2cqn" class="scene2cq" visible="false">
         <a-text value="Dit antwoord is juist. Door samen te werken betrek je Lars goed bij het proces, ook al heeft hij een licht verstandelijke beperking. Daarnaast leg je het ook nog uit in makkelijke taal. Hierdoor neem je Lars zijn licht verstandelijke beperking mee in het proces. "
-                position="13 5 -5" rotation="0 -90 0"
+                position="-14 5 7" rotation="0 90 0"
                 color="green"
                 text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
         <a-box
                 color="green"
-                position="7 1 5"
-                rotation="0 -110 -90"
+                position="-10 0 -5"
                 2cqn
         ></a-box>
 
@@ -391,13 +385,20 @@
     <!--                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>-->
     <!--        <a-box position="13.01 -1 -5" color="white" 2c></a-box>-->
     <!--    </a-entity>-->
-    <a-entity id="vraag3" class="scene3" visible="false">
-        <a-text value="bedankt voor het testen van de demo :) "
-                position="13.01 6 -5" rotation="0 -90 0"
-                color="aqua"
-                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
-    </a-entity>
+    <!--    <a-entity id="vraag3" class="scene3" visible="false">-->
+    <!--        <a-text value="bedankt voor het testen van de demo :) "-->
+    <!--                position="13.01 6 -5" rotation="0 -90 0"-->
+    <!--                color="aqua"-->
+    <!--                text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>-->
+    <!--    </a-entity>-->
 
+    <!--    Vraag 3: -->
+        <a-entity id="vraag3" class="scene3" visible="false">
+            <a-text value="Scene 3 hier"
+                    position="13.01 6 -5" rotation="0 -90 0"
+                    color="aqua"
+                    text="width: 14.59; alphaTest: 3.41; baseline: top; opacity: 6.46; side: double; tabSize: 5.51; transparent: false; "></a-text>
+        </a-entity>
 
 </a-scene>
 
