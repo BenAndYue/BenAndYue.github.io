@@ -42,7 +42,7 @@ AFRAME.registerComponent('tostart', {
             loadingInintro()
 
 
-                document.querySelector('#opening').play();
+            document.querySelector('#opening').play();
 
         }
         // let element = document.getElementById('pac');
@@ -72,9 +72,7 @@ AFRAME.registerComponent('toop2', {
 
             loadingInintro()
 
-                document.querySelector('#opening2').play();
-
-
+            document.querySelector('#opening2').play();
 
             let element = document.getElementById('sceneoop1');
             element.remove();
