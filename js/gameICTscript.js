@@ -17,7 +17,7 @@ window.onload = function () {
 
 
     //targets
-    target100 = document.getEslementById("target100")
+    target100 = document.getElementById("target100")
     target200 = document.getElementById("target200")
     target300 = document.getElementById("target300")
     target500 = document.getElementById("target500")
