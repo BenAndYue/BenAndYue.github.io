@@ -14,7 +14,7 @@ AFRAME.registerComponent('3a', {
             // let element = document.getElementById('vraag1');
             // element.remove();
             loadingInintro()
-
+            console.log("3a")
 
                 document.querySelector('#scene3a').play();
 
@@ -159,10 +159,7 @@ AFRAME.registerComponent('3c', {
             // let element = document.getElementById('vraag1');
             // element.remove();
             loadingInintro()
-
-
                 document.querySelector('#scene3c').play();
-
 
         }
         //removing current scene
