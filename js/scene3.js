@@ -15,10 +15,9 @@ AFRAME.registerComponent('3a', {
             // element.remove();
             loadingInintro()
 
-            window.addEventListener('click', function () {
-                //TODO video
+
                 document.querySelector('#scene3a').play();
-            });
+
 
         }
         //removing current scene
@@ -89,10 +88,8 @@ AFRAME.registerComponent('3b', {
             // element.remove();
             loadingInintro()
 
-            window.addEventListener('click', function () {
-                //TODO video
                 document.querySelector('#scene3b').play();
-            });
+
 
         }
         //removing current scene
@@ -128,8 +125,8 @@ AFRAME.registerComponent('3bq', {
 
 AFRAME.registerComponent('3bqn', {
     init: function () {
-        let current = document.querySelectorAll(".scene3bq");
-        let next = document.querySelectorAll(".scene3");
+        let current = document.querySelectorAll(".scene3bqn");
+        let next = document.querySelectorAll(".scene4");
         let sphereloader = () => {
             sky.setAttribute("src", "#bordeauxtheater");
             current.forEach((currentelement) => {
@@ -163,10 +160,9 @@ AFRAME.registerComponent('3c', {
             // element.remove();
             loadingInintro()
 
-            window.addEventListener('click', function () {
-                //TODO video
+
                 document.querySelector('#scene3c').play();
-            });
+
 
         }
         //removing current scene

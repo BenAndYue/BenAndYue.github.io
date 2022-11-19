@@ -15,10 +15,9 @@ AFRAME.registerComponent('2a', {
             // element.remove();
             loadingInintro()
 
-            window.addEventListener('click', function () {
-                //TODO video
-                document.querySelector('#scene2a').play();
-            });
+
+            document.querySelector('#scene2a').play();
+
 
         }
         //removing current scene
@@ -89,10 +88,10 @@ AFRAME.registerComponent('2b', {
             // element.remove();
             loadingInintro()
 
-            window.addEventListener('click', function () {
-                //TODO video
-                document.querySelector('#scene2b').play();
-            });
+
+            //TODO video
+            document.querySelector('#scene2b').play();
+
 
         }
         //removing current scene
@@ -163,10 +162,10 @@ AFRAME.registerComponent('2c', {
             // element.remove();
             loadingInintro()
 
-            window.addEventListener('click', function () {
-                //TODO video
-                document.querySelector('#scene2c').play();
-            });
+
+            //TODO video
+            document.querySelector('#scene2c').play();
+
 
         }
         //removing current scene
