@@ -164,7 +164,7 @@ AFRAME.registerComponent('1c', {
 
 
             //TODO video
-            document.querySelector('#scene2c').play();
+            document.querySelector('#scene1c').play();
 
 
         }
